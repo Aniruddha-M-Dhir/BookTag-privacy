@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +17,7 @@
   <nav class="site-nav">
     <div class="nav-container">
       <a href="index.html" class="brand-link">
-        <div class="brand-mark">B</div>
+        <img src="icon.png" alt="BookTag" class="brand-logo-img">
         <span class="brand-name">BookTag</span>
         <span class="brand-badge">Support</span>
       </a>
@@ -95,12 +97,25 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 BookTag. All rights reserved.</p>
-    <p style="margin-top: 8px;">
-      <a href="privacy.html">Privacy Policy</a> &bull;
-      <a href="terms.html">Terms of Service</a> &bull;
-      <a href="support.html">Support</a>
-    </p>
+    <div class="footer-container">
+      <a href="index.html" class="footer-brand">
+        <img src="icon.png" alt="BookTag" class="footer-logo">
+        <span class="footer-brand-name">BookTag</span>
+      </a>
+      <p class="footer-tagline">
+        An offline-first digital reading sanctuary designed with Japanese editorial minimalism and absolute reader privacy.
+      </p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="sep">&bull;</span>
+        <a href="terms.html">Terms of Service</a>
+        <span class="sep">&bull;</span>
+        <a href="support.html">Support Desk</a>
+        <span class="sep">&bull;</span>
+        <a href="mailto:verify@aniruddhamdhir.dev">verify@aniruddhamdhir.dev</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 BookTag. Crafted by Aniruddha M Dhir. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>

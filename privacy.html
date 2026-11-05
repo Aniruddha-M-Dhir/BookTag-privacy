@@ -55,11 +55,7 @@
           <strong>Reading Records & User Content:</strong> Your personal reading lists (Currently Reading, Want to Read, and Completed Books), page progress, reading goals, chapter logs, completion dates, and your private notes, quotes, and reflections.
         </li>
         <li>
-          <strong>Device Permissions (Camera & Photos):</strong> If you grant permission, BookTag accesses:
-          <ul>
-            <li><strong>Camera:</strong> Exclusively used locally on-device to scan ISBN barcodes on physical book covers to quickly lookup book metadata. Camera video feeds are processed in memory in real time and are never recorded, transmitted, or saved to external servers.</li>
-            <li><strong>Photo Library:</strong> Exclusively used to let you select a custom cover image for a book in your personal library. Images remain within your private storage.</li>
-          </ul>
+          <strong>No Sensitive Device Permissions:</strong> BookTag operates with zero invasive permissions. We do not request or require access to your device camera, photo library, microphone, contacts, or GPS location.
         </li>
         <li>
           <strong>Technical Diagnostics:</strong> Minimal, non-identifying diagnostic information (such as operating system version, app version, and crash logs) strictly to maintain application stability.
@@ -74,7 +70,7 @@
         <li>To manage your book catalog, track reading milestones, calculate page counts, and render your visual blossom growth lifecycle.</li>
         <li>To securely synchronize your library across your authorized devices via our encrypted cloud backend.</li>
         <li>To authenticate your identity and deliver security-related transactional emails (e.g. login verification codes).</li>
-        <li>To lookup public book bibliographic metadata (such as book titles, author names, and published covers) when you search or scan an ISBN barcode.</li>
+        <li>To lookup public book bibliographic metadata (such as book titles, author names, and published covers) when you search for a book.</li>
       </ul>
       <p>
         <strong>No Sale or Marketing of Personal Information:</strong> We do not sell, rent, monetize, or disclose your personal information, reading habits, notes, or contact details to data brokers, ad networks, or marketing partners.
@@ -104,7 +100,7 @@
           <strong>Supabase:</strong> For database hosting, authentication, and secure data synchronization.
         </li>
         <li>
-          <strong>Public Book Catalogs (Google Books API & Open Library):</strong> When you search for a book or scan a barcode, queries containing only the search term or ISBN number are sent to retrieve book metadata. No personal user identifiers or reading lists are ever transmitted to these services.
+          <strong>Public Book Catalogs (Google Books API & Open Library):</strong> When you search for a book, queries containing only the search term are sent to retrieve public book metadata. No personal user identifiers or reading lists are ever transmitted to these services.
         </li>
         <li>
           <strong>Apple Sign-In:</strong> Available for users choosing Apple’s privacy-preserving authentication service.

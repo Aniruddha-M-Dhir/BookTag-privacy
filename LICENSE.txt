@@ -1,0 +1,7 @@
+Copyright (c) 2026 Aniruddha M Dhir / BookTag. All rights reserved.
+
+The documents, terms of service, privacy policy, and brand assets contained in 
+this repository are proprietary to BookTag. Permission is granted solely for 
+viewing and reference via GitHub Pages in connection with the BookTag application. 
+No permission is granted to reproduce, modify, redistribute, or use these materials 
+for any commercial or other third-party purpose without prior written consent.

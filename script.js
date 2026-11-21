@@ -1,42 +1,51 @@
 // BookTag Legal & Support — Mobile Navigation Menu
-document.addEventListener("DOMContentLoaded", () => {
+function toggleNavMenu(forceClose) {
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
-
   if (!navToggle || !navLinks) return;
 
-  function toggleMenu(forceClose = false) {
-    const isOpen = forceClose ? false : !navLinks.classList.contains("open");
-    navLinks.classList.toggle("open", isOpen);
-    navToggle.classList.toggle("open", isOpen);
-    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  }
+  const isOpen = forceClose === true ? false : !navLinks.classList.contains("open");
+  navLinks.classList.toggle("open", isOpen);
+  navToggle.classList.toggle("open", isOpen);
+  navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
 
+function initNav() {
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  if (!navToggle || !navLinks) return;
+
+  // Toggle button click listener
   navToggle.addEventListener("click", (e) => {
     e.stopPropagation();
-    toggleMenu();
+    toggleNavMenu();
   });
 
-  // Close when clicking outside
+  // Close when clicking anywhere outside
   document.addEventListener("click", (e) => {
     if (navLinks.classList.contains("open") && !navToggle.contains(e.target) && !navLinks.contains(e.target)) {
-      toggleMenu(true);
+      toggleNavMenu(true);
     }
   });
 
-  // Close when clicking any link
+  // Close when clicking any link inside the menu
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      toggleMenu(true);
+      toggleNavMenu(true);
     });
   });
 
   // Close on Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && navLinks.classList.contains("open")) {
-      toggleMenu(true);
+      toggleNavMenu(true);
       navToggle.focus();
     }
   });
-});
+}
 
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initNav);
+} else {
+  initNav();
+}

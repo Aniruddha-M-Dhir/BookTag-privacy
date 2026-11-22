@@ -517,12 +517,149 @@ strong {
   text-decoration: none;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-app-store:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 12px 30px rgba(212, 119, 98, 0.2);
+  box-shadow: 0 12px 30px rgba(212, 119, 98, 0.25);
+}
+
+/* Button Shine Sweep (Villix style) */
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -80%;
+  width: 50%;
+  height: 400%;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+  transform: rotate(25deg);
+  animation: shineSweep 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shineSweep {
+  0%, 65% { left: -80%; }
+  100% { left: 180%; }
+}
+
+/* Animated Gradient Text */
+.animated-gradient-text {
+  background: linear-gradient(110deg, #F1E7D9 0%, #D8A765 35%, #D47762 65%, #F1E7D9 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradientFlow 9s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Grid Overlay & Ambient Glowing Orbs */
+.bg-ambient-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse at 50% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 75%);
+  opacity: 0.7;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.18;
+  will-change: transform;
+}
+
+.ambient-orb-1 {
+  width: 580px;
+  height: 580px;
+  top: -80px;
+  left: 15%;
+  background: radial-gradient(circle, #D47762 0%, #182821 65%, transparent 100%);
+  animation: orbFloat 18s ease-in-out infinite alternate;
+}
+
+.ambient-orb-2 {
+  width: 480px;
+  height: 480px;
+  top: 38%;
+  right: -5%;
+  background: radial-gradient(circle, #D8A765 0%, #161D26 65%, transparent 100%);
+  animation: orbFloat2 22s ease-in-out infinite alternate;
+}
+
+.ambient-orb-3 {
+  width: 520px;
+  height: 520px;
+  bottom: 8%;
+  left: -8%;
+  background: radial-gradient(circle, #24382D 0%, #0E1116 65%, transparent 100%);
+  animation: orbFloat 24s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(45px) scale(1.08); }
+  100% { transform: translateY(-35px) scale(0.94); }
+}
+
+@keyframes orbFloat2 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-50px) scale(1.1) rotate(14deg); }
+  100% { transform: translateY(40px) scale(0.92) rotate(-10deg); }
+}
+
+/* Floating Sakura Petals (Subtle & Calming) */
+.falling-petals-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floating-petal {
+  position: absolute;
+  background: radial-gradient(circle, #FFB7C5 0%, #D47762 100%);
+  border-radius: 12px 2px 12px 2px;
+  opacity: 0.35;
+  filter: blur(0.5px);
+  animation: petalDrift 14s linear infinite;
+}
+
+.floating-petal:nth-child(1) { width: 10px; height: 14px; top: -20px; left: 12%; animation-duration: 16s; animation-delay: 0s; }
+.floating-petal:nth-child(2) { width: 12px; height: 16px; top: -20px; left: 34%; animation-duration: 13s; animation-delay: 3s; }
+.floating-petal:nth-child(3) { width: 9px; height: 12px; top: -20px; left: 58%; animation-duration: 18s; animation-delay: 5s; }
+.floating-petal:nth-child(4) { width: 11px; height: 15px; top: -20px; left: 78%; animation-duration: 15s; animation-delay: 1.5s; }
+.floating-petal:nth-child(5) { width: 8px; height: 11px; top: -20px; left: 90%; animation-duration: 20s; animation-delay: 7s; }
+
+@keyframes petalDrift {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  15% { opacity: 0.45; }
+  85% { opacity: 0.35; }
+  100% { transform: translateY(750px) translateX(90px) rotate(360deg); opacity: 0; }
 }
 
 .btn-app-store svg {
@@ -665,8 +802,8 @@ strong {
   position: absolute;
   width: 320px;
   height: 480px;
-  background: radial-gradient(circle, rgba(212, 119, 98, 0.18) 0%, rgba(24, 40, 33, 0.3) 50%, transparent 75%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(212, 119, 98, 0.22) 0%, rgba(24, 40, 33, 0.35) 50%, transparent 75%);
+  filter: blur(44px);
   z-index: 1;
 }
 
@@ -694,6 +831,392 @@ strong {
   height: auto;
   display: block;
   border-radius: 36px;
+}
+
+/* Floating Context Cards (Villix style) */
+.hero-float-card {
+  position: absolute;
+  z-index: 4;
+  background: rgba(22, 29, 38, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  pointer-events: auto;
+  transition: transform 0.3s ease;
+}
+
+.hero-float-card-1 {
+  top: 14%;
+  left: -48px;
+  animation: floatCard1 6s ease-in-out infinite;
+}
+
+.hero-float-card-2 {
+  bottom: 24%;
+  right: -52px;
+  animation: floatCard2 7s ease-in-out infinite;
+}
+
+.hero-float-card-3 {
+  bottom: 5%;
+  left: -32px;
+  animation: floatCard3 6.5s ease-in-out infinite;
+}
+
+@keyframes floatCard1 {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0) rotate(1.5deg); }
+  50% { transform: translateY(-12px) rotate(-0.5deg); }
+}
+
+@keyframes floatCard3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+.float-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.float-icon-box.terracotta {
+  background: rgba(212, 119, 98, 0.18);
+  border: 1px solid rgba(212, 119, 98, 0.35);
+  color: #D47762;
+}
+
+.float-icon-box.green {
+  background: rgba(50, 70, 59, 0.4);
+  border: 1px solid #32463B;
+  color: #A7B69C;
+}
+
+.float-icon-box.gold {
+  background: rgba(216, 167, 101, 0.18);
+  border: 1px solid rgba(216, 167, 101, 0.35);
+  color: #D8A765;
+}
+
+.float-content-title {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.float-content-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #F1E7D9;
+  line-height: 1.3;
+}
+
+/* ============================================================
+   Interactive Bento Grid & Dynamic Showcase
+   ============================================================ */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.bento-grid-row-2 {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+}
+
+.bento-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.bento-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--accent-terracotta);
+  background: rgba(212, 119, 98, 0.12);
+  border: 1px solid rgba(212, 119, 98, 0.28);
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.bento-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.bento-subtitle {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+
+/* Interactive Controls */
+.interactive-pill-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.interactive-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interactive-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.interactive-pill.active {
+  background: rgba(212, 119, 98, 0.18);
+  border-color: var(--accent-terracotta);
+  color: var(--accent-terracotta);
+  font-weight: 600;
+}
+
+/* Sakura Dynamic Preview Canvas */
+.sakura-demo-box {
+  background: linear-gradient(145deg, #182821 0%, #101B16 100%);
+  border: 1px solid #32463B;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sakura-demo-tree-svg {
+  width: 100%;
+  max-width: 240px;
+  height: 150px;
+  transition: all 0.4s ease;
+}
+
+.sakura-demo-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #C5C8CD;
+}
+
+.sakura-demo-bar-bg {
+  width: 100%;
+  height: 7px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.sakura-demo-bar-fill {
+  height: 100%;
+  width: 65%;
+  background: linear-gradient(90deg, #D47762, #D8A765);
+  border-radius: 4px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Interactive Search Demo */
+.search-demo-input-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.search-demo-input {
+  width: 100%;
+  background: #11161D;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 14px 12px 38px;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-demo-input:focus {
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 2px rgba(212, 119, 98, 0.2);
+}
+
+.search-demo-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.search-demo-results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-result-item {
+  background: #161D26;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #E2E4E8;
+  transition: all 0.2s ease;
+}
+
+.search-result-item mark {
+  background: rgba(216, 167, 101, 0.35);
+  color: #FFFFFF;
+  border-radius: 2px;
+  padding: 1px 3px;
+}
+
+/* Sync Switch Demo */
+.sync-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #10141A;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+}
+
+.sync-status-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  transition: all 0.3s ease;
+}
+
+.sync-status-display.offline {
+  background: rgba(216, 167, 101, 0.1);
+  border: 1px solid rgba(216, 167, 101, 0.25);
+  color: #EBD3A7;
+}
+
+.sync-status-display.online {
+  background: rgba(138, 158, 139, 0.12);
+  border: 1px solid rgba(138, 158, 139, 0.28);
+  color: #D2E0D4;
+}
+
+/* Switch Toggle Styling */
+.switch-label {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #272E38;
+  transition: .3s;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.switch-label input:checked + .switch-slider {
+  background-color: var(--accent-sage);
+}
+
+.switch-label input:checked + .switch-slider:before {
+  transform: translateX(20px);
+}
+
+@media (max-width: 980px) {
+  .hero-float-card {
+    display: none;
+  }
+
+  .bento-grid,
+  .bento-grid-row-2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Sections General */

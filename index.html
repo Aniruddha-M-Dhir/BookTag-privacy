@@ -10,12 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="booktag-icon.png">
-  <link rel="stylesheet" href="style.css?v=2.1">
+  <link rel="stylesheet" href="style.css?v=2.2">
 </head>
 <body>
 
   <!-- ============================================================
-       1. HEADER / NAVIGATION
+       DYNAMIC BACKGROUND AMBIENCE (Grid Overlay & Floating Orbs)
+       ============================================================ -->
+  <div class="bg-ambient-layer" aria-hidden="true">
+    <div class="grid-overlay"></div>
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
+  <!-- ============================================================
+       1. HEADER / NAVIGATION (Frosted Glass Pill)
        ============================================================ -->
   <nav class="site-nav">
     <div class="nav-container" style="max-width: 1140px;">
@@ -34,11 +44,11 @@
       <div class="nav-links" id="navLinks">
         <a href="#benefits">Benefits</a>
         <a href="#how-it-works">How It Works</a>
-        <a href="#features">Features</a>
+        <a href="#interactive-features">Experience</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="privacy.html">Privacy</a>
-        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store" style="padding: 7px 16px; margin-left: 6px;">
+        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store btn-shine" style="padding: 7px 16px; margin-left: 6px;">
           <svg viewBox="0 0 384 512" aria-hidden="true">
             <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
           </svg>
@@ -54,21 +64,31 @@
   <!-- ============================================================
        2. HERO SECTION
        ============================================================ -->
-  <header class="landing-wrapper">
+  <header class="landing-wrapper" style="position: relative; z-index: 2;">
+    <!-- Gentle Sakura Petals Particle Layer -->
+    <div class="falling-petals-container" aria-hidden="true">
+      <div class="floating-petal"></div>
+      <div class="floating-petal"></div>
+      <div class="floating-petal"></div>
+      <div class="floating-petal"></div>
+      <div class="floating-petal"></div>
+    </div>
+
     <section class="hero-section">
       <div class="hero-content">
         <div class="hero-pill">
           <span>🌸</span> Plant Your Next Story
         </div>
         <h1 class="hero-title">
-          BookTag, Your Personal<br><em>Reading Sanctuary</em>.
+          BookTag, Your Personal<br>
+          <span class="animated-gradient-text">Reading Sanctuary</span>.
         </h1>
         <p class="hero-desc">
-          Escape streak anxiety and gamified clutter. BookTag is a Japanese-inspired personal reading companion and note sanctuary. Track your journey page by page, cultivate structured chapter reflections, and watch your Sakura blossom tree flourish — 100% offline-first.
+          Escape streak anxiety and gamified clutter. BookTag is a Japanese-inspired personal reading companion. Track your daily pages, cultivate structured chapter reflections, and watch your Sakura blossom tree flourish — 100% offline-first.
         </p>
 
         <div class="hero-cta-group">
-          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store btn-shine">
             <svg viewBox="0 0 384 512" aria-hidden="true">
               <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
             </svg>
@@ -77,7 +97,7 @@
               <span class="btn-app-store-title">App Store</span>
             </div>
           </a>
-          <a href="#how-it-works" class="btn-secondary">
+          <a href="#interactive-features" class="btn-secondary">
             <span>Explore Experience</span>
             <span>&darr;</span>
           </a>
@@ -90,13 +110,41 @@
           <span>•</span>
           <span>✓ 100% Offline SQLite</span>
           <span>•</span>
-          <span>✓ Cloud Sync</span>
+          <span>✓ Encrypted Cloud Sync</span>
         </div>
       </div>
 
-      <!-- Real App Screenshot inside iPhone Frame -->
+      <!-- Real App Screenshot with Villix-Style Floating Context Badges -->
       <div class="mockup-wrapper">
         <div class="mockup-glow"></div>
+
+        <!-- Floating Card 1: Sakura Growth -->
+        <div class="hero-float-card hero-float-card-1">
+          <div class="float-icon-box terracotta">🌸</div>
+          <div>
+            <div class="float-content-title">Sakura Growth</div>
+            <div class="float-content-desc">Level 3 Blooming</div>
+          </div>
+        </div>
+
+        <!-- Floating Card 2: Chapter Reflection -->
+        <div class="hero-float-card hero-float-card-2">
+          <div class="float-icon-box gold">🏷️</div>
+          <div>
+            <div class="float-content-title">Chapter 3 Reflection</div>
+            <div class="float-content-desc">"Separation of tasks"</div>
+          </div>
+        </div>
+
+        <!-- Floating Card 3: Offline Sovereignty -->
+        <div class="hero-float-card hero-float-card-3">
+          <div class="float-icon-box green">⚡</div>
+          <div>
+            <div class="float-content-title">SQLite Local WAL</div>
+            <div class="float-content-desc">0ms Latency • Synced</div>
+          </div>
+        </div>
+
         <div class="mockup-phone">
           <img 
             src="app-screenshot.jpg" 
@@ -108,7 +156,7 @@
     </section>
   </header>
 
-  <main class="landing-wrapper">
+  <main class="landing-wrapper" style="position: relative; z-index: 2;">
 
     <!-- ============================================================
          3. SOCIAL PROOF & METRICS
@@ -221,7 +269,167 @@
     </section>
 
     <!-- ============================================================
-         5. HOW IT WORKS
+         5. INTERACTIVE BENTO GRID (Villix-Style Interactive Showcase)
+         ============================================================ -->
+    <section class="landing-section" id="interactive-features">
+      <div class="section-header-center">
+        <span class="section-pill">Interactive Experience</span>
+        <h2 class="section-title">Experience the Craft of BookTag</h2>
+        <p class="section-subtitle">Interact with live simulations of our core mechanics below.</p>
+      </div>
+
+      <!-- Bento Row 1 -->
+      <div class="bento-grid">
+        <!-- Card 1: Sakura Tree Lifecycle Simulator -->
+        <div class="bento-card">
+          <span class="bento-badge">🌸 Visual Growth Engine</span>
+          <h3 class="bento-title">Watch Your Sakura Tree Evolve</h3>
+          <p class="bento-subtitle">
+            Click any milestone below to simulate how your tree flourishes as you log reading sessions:
+          </p>
+
+          <div class="interactive-pill-group">
+            <button type="button" class="interactive-pill sakura-stage-pill" onclick="setSakuraStage('sprout', this)">Sprout (15%)</button>
+            <button type="button" class="interactive-pill sakura-stage-pill" onclick="setSakuraStage('branching', this)">Branching (40%)</button>
+            <button type="button" class="interactive-pill sakura-stage-pill active" onclick="setSakuraStage('budding', this)">Budding (68%)</button>
+            <button type="button" class="interactive-pill sakura-stage-pill" onclick="setSakuraStage('blossom', this)">Full Blossom (100%)</button>
+          </div>
+
+          <div class="sakura-demo-box">
+            <svg class="sakura-demo-tree-svg" viewBox="0 0 160 140" fill="none">
+              <defs>
+                <linearGradient id="trunkGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#3D2817"/>
+                  <stop offset="100%" stop-color="#6B4E31"/>
+                </linearGradient>
+                <linearGradient id="sakuraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFB7C5"/>
+                  <stop offset="100%" stop-color="#E07965"/>
+                </linearGradient>
+                <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#A7B69C"/>
+                  <stop offset="100%" stop-color="#55755E"/>
+                </linearGradient>
+              </defs>
+              <path id="demoTrunkPath" d="M80 135 L80 90 Q80 75 62 62 Q52 54 44 48 M80 90 Q80 72 98 58 Q110 48 118 42 M80 75 Q78 55 80 38" stroke="url(#trunkGrad)" stroke-width="4" stroke-linecap="round"/>
+              <g id="demoDynamicElements">
+                <circle cx="44" cy="48" r="8" fill="url(#sakuraGrad)" opacity="0.95"/>
+                <circle cx="118" cy="42" r="9" fill="url(#sakuraGrad)" opacity="0.95"/>
+                <circle cx="80" cy="38" r="9.5" fill="url(#sakuraGrad)" opacity="0.98"/>
+                <circle cx="62" cy="60" r="6" fill="#FFB7C5" opacity="0.9"/>
+                <circle cx="98" cy="58" r="7" fill="url(#sakuraGrad)" opacity="0.9"/>
+                <ellipse cx="36" cy="56" rx="4.5" ry="2.5" fill="url(#leafGrad)" transform="rotate(-30 36 56)"/>
+                <ellipse cx="126" cy="50" rx="4.5" ry="2.5" fill="url(#leafGrad)" transform="rotate(35 126 50)"/>
+              </g>
+            </svg>
+
+            <div class="sakura-demo-stats">
+              <span id="sakuraPages">Page 196 of 288</span>
+              <span id="sakuraStatusText" style="color: #A7B69C; font-weight: 600;">Tender Buds Blooming</span>
+              <span id="sakuraPercent" style="color: #D47762; font-weight: 700;">68%</span>
+            </div>
+            <div class="sakura-demo-bar-bg">
+              <div class="sakura-demo-bar-fill" id="sakuraBar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Interactive Categorized Notes -->
+        <div class="bento-card">
+          <span class="bento-badge">🏷️ Note Taxonomy</span>
+          <h3 class="bento-title">Categorized Reflections</h3>
+          <p class="bento-subtitle">Filter reading reflections by intent to revisit your thoughts with ease:</p>
+
+          <div class="interactive-pill-group">
+            <button type="button" class="interactive-pill note-filter-pill active" onclick="filterNotes('all', this)">All</button>
+            <button type="button" class="interactive-pill note-filter-pill" onclick="filterNotes('learning', this)">Key Learning</button>
+            <button type="button" class="interactive-pill note-filter-pill" onclick="filterNotes('reflection', this)">Reflection</button>
+            <button type="button" class="interactive-pill note-filter-pill" onclick="filterNotes('idea', this)">Important Idea</button>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div class="search-result-item demo-note-item" data-category="learning">
+              <div style="font-size: 10px; color: #D47762; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Key Learning • Chapter 3</div>
+              <div>"All interpersonal relationship troubles are caused by intruding on other people's tasks."</div>
+            </div>
+            <div class="search-result-item demo-note-item" data-category="reflection">
+              <div style="font-size: 10px; color: #D8A765; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Reflection • Chapter 5</div>
+              <div>"Courage is not the absence of fear, but the willingness to proceed despite being disliked."</div>
+            </div>
+            <div class="search-result-item demo-note-item" data-category="idea">
+              <div style="font-size: 10px; color: #8A9E8B; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Important Idea • Chapter 1</div>
+              <div>"Your life is decided here and now, not by the past experiences that happened to you."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento Row 2 -->
+      <div class="bento-grid-row-2">
+        <!-- Card 3: Instant Search Demo -->
+        <div class="bento-card">
+          <span class="bento-badge">⚡ SQLite FTS5 Engine</span>
+          <h3 class="bento-title">Instant Full-Text Search</h3>
+          <p class="bento-subtitle">Type below to experience sub-millisecond keyword lookup:</p>
+
+          <div class="search-demo-input-box">
+            <span class="search-demo-icon">🔍</span>
+            <input 
+              type="text" 
+              class="search-demo-input" 
+              placeholder="Type e.g. 'courage', 'tasks', 'freedom'..." 
+              oninput="handleLiveSearch(this)"
+            >
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Indexed Notes</span>
+            <span id="searchCountBadge" style="font-size: 11px; color: var(--accent-gold); font-weight: 600;">Instant FTS5 Index</span>
+          </div>
+
+          <div class="search-demo-results">
+            <div class="search-result-item demo-search-item" data-searchable="courage disliked freedom" data-original-quote="Courage is the willingness to be disliked in the pursuit of genuine personal freedom.">
+              <div class="search-item-title" style="font-size: 10.5px; color: var(--accent-terracotta); font-weight: 600;">The Courage to Be Disliked</div>
+              <div class="search-item-quote">Courage is the willingness to be disliked in the pursuit of genuine personal freedom.</div>
+            </div>
+            <div class="search-result-item demo-search-item" data-searchable="tasks separation boundaries" data-original-quote="Separation of tasks allows you to set healthy emotional boundaries without guilt.">
+              <div class="search-item-title" style="font-size: 10.5px; color: var(--accent-gold); font-weight: 600;">Chapter 3 Notes</div>
+              <div class="search-item-quote">Separation of tasks allows you to set healthy emotional boundaries without guilt.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Offline / Cloud Sync Demo -->
+        <div class="bento-card">
+          <span class="bento-badge">🔒 True Offline Sovereignty</span>
+          <h3 class="bento-title">Zero Network Dependency</h3>
+          <p class="bento-subtitle">
+            Toggle connectivity to see how BookTag manages local SQLite writes vs. Supabase cloud sync:
+          </p>
+
+          <div class="sync-toggle-container">
+            <div>
+              <div style="font-size: 14px; font-weight: 600; color: #F1E7D9;">Simulate Internet Connectivity</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Switch between offline and online states</div>
+            </div>
+            <label class="switch-label">
+              <input type="checkbox" onchange="toggleSyncDemo(this)">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+
+          <div id="syncStatusDisplay" class="sync-status-display offline">
+            <span id="syncStatusIcon" style="font-size: 22px;">✈️</span>
+            <div id="syncStatusText">
+              <strong>Airplane / Offline Mode:</strong> 100% functional. All pages, notes, and progress write directly to on-device SQLite with zero network latency.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. HOW IT WORKS
          ============================================================ -->
     <section class="landing-section" id="how-it-works">
       <div class="section-header-center">
@@ -234,7 +442,7 @@
         <div class="step-card">
           <div class="step-num">STEP 01</div>
           <h3>Curate Your Library</h3>
-          <p>Search millions of published titles via Google Books or craft custom volumes manually with publisher, ISBN, and page count details.</p>
+          <p>Search millions of published titles via Google Books or craft bespoke volumes manually with publisher, ISBN, and page count details.</p>
         </div>
 
         <div class="step-card">
@@ -253,55 +461,6 @@
           <div class="step-num">STEP 04</div>
           <h3>Silent Cloud Backup</h3>
           <p>Enjoy 100% offline freedom anywhere on Earth. The moment you reconnect to Wi-Fi or cellular, your private library syncs automatically.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         6. PRODUCT FEATURES
-         ============================================================ -->
-    <section class="landing-section" id="features">
-      <div class="section-header-center">
-        <span class="section-pill">Meticulous Craft</span>
-        <h2 class="section-title">Features Built for True Readers</h2>
-        <p class="section-subtitle">Every pixel and interaction is tuned for beauty, speed, and contemplative focus.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🌸</div>
-          <h3>Dynamic Sakura Growth</h3>
-          <p>A generative Japanese cherry blossom tree that dynamically reflects your percentage through each book, celebrating completion with beauty.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">📑</div>
-          <h3>Chapter Breakdowns</h3>
-          <p>Divide long, ambitious works into digestible milestones. Check off chapters as you complete them and track progress granularly.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🏷️</div>
-          <h3>Categorized Reflections</h3>
-          <p>Tag notes as Note, Summary, Key Learning, Important Idea, Question, or Reflection to revisit your thoughts with structured clarity.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Sub-Millisecond Search</h3>
-          <p>Powered by SQLite FTS5 (Full-Text Search). Retrieve that quote or philosophical insight you wrote months ago in under 10ms.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🏮</div>
-          <h3>Japanese Editorial Aesthetic</h3>
-          <p>Crafted with Ink Black backgrounds, Warm Parchment text, and Vermilion accents to eliminate eye strain during late-night reading sessions.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Zero Trackers or Data Selling</h3>
-          <p>Your notes and reading history are yours alone. We sell zero ads, employ no third-party data broker SDKs, and support instant self-serve account deletion.</p>
         </div>
       </div>
     </section>
@@ -349,7 +508,7 @@
             </li>
           </ul>
 
-          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store" style="width: 100%; justify-content: center; padding: 14px 24px;">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store btn-shine" style="width: 100%; justify-content: center; padding: 14px 24px;">
             <svg viewBox="0 0 384 512" aria-hidden="true">
               <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
             </svg>
@@ -445,7 +604,7 @@
           Reclaim reading as a calm, contemplative practice. Download BookTag today and plant your next story.
         </p>
 
-        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store" style="padding: 13px 28px;">
+        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store btn-shine" style="padding: 13px 28px;">
           <svg viewBox="0 0 384 512" aria-hidden="true">
             <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
           </svg>
@@ -462,7 +621,7 @@
   <!-- ============================================================
        10. FOOTER
        ============================================================ -->
-  <footer class="site-footer">
+  <footer class="site-footer" style="position: relative; z-index: 2;">
     <div class="footer-container" style="max-width: 1140px;">
       <a href="index.html" class="footer-brand">
         <img src="booktag-icon.png" alt="BookTag" class="footer-logo">
@@ -471,9 +630,9 @@
       <div class="footer-links">
         <a href="#benefits">Benefits</a>
         <span class="sep">&bull;</span>
-        <a href="#how-it-works">How It Works</a>
+        <a href="#interactive-features">Experience</a>
         <span class="sep">&bull;</span>
-        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
         <span class="sep">&bull;</span>
         <a href="privacy.html">Privacy Policy</a>
         <span class="sep">&bull;</span>
@@ -487,6 +646,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.1"></script>
+  <script src="script.js?v=2.2"></script>
 </body>
 </html>

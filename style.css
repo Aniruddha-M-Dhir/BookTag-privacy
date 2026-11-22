@@ -733,7 +733,7 @@ strong {
 .hero-clean-title {
   font-family: var(--font-serif);
   text-align: center;
-  margin: 0 auto 36px;
+  margin: 0 auto 16px;
   max-width: 920px;
   display: flex;
   flex-direction: column;
@@ -759,6 +759,18 @@ strong {
   display: block;
 }
 
+.hero-lead-text {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+}
+
 .hero-clean-cta {
   margin-top: 48px;
   margin-bottom: 24px;
@@ -776,7 +788,7 @@ strong {
   position: relative;
   width: 100%;
   max-width: 980px;
-  margin: 0 auto;
+  margin: 48px auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -803,9 +815,6 @@ strong {
   cursor: pointer;
   background: transparent;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  /* Seamless edge blend so the hand photo has no visible rectangle */
-  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 98%);
-  mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 98%);
 }
 
 .hero-hand-stage.is-near .hero-hand-frame,
@@ -1100,7 +1109,7 @@ strong {
 
 @media (max-width: 768px) {
   .hero-clean-title {
-    margin-bottom: 22px;
+    margin-bottom: 14px;
     gap: 8px;
     padding: 0 16px;
   }
@@ -1113,8 +1122,15 @@ strong {
     font-size: 22px;
   }
 
+  .hero-lead-text {
+    font-size: 16px;
+    padding: 0 20px;
+    margin-bottom: 8px;
+  }
+
   .hero-hand-stage {
     max-width: 380px;
+    margin-top: 36px;
     margin-bottom: 20px;
   }
 

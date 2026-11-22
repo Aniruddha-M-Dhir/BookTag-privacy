@@ -780,39 +780,29 @@ strong {
   z-index: 10;
   width: 100%;
   max-width: 440px;
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 
-    0 35px 90px rgba(0, 0, 0, 0.85),
-    0 12px 35px rgba(0, 0, 0, 0.65),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
   cursor: pointer;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  background: #090D0B;
+  background: transparent;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Seamless edge blend so the hand photo has no visible rectangle */
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 98%);
+  mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 98%);
 }
 
 .hero-hand-stage.is-near .hero-hand-frame,
 .hero-hand-frame:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 
-    0 45px 110px rgba(0, 0, 0, 0.95),
-    0 16px 45px rgba(0, 0, 0, 0.75),
-    0 0 0 1px rgba(212, 119, 98, 0.4),
-    0 0 35px rgba(212, 119, 98, 0.2);
+  transform: translateY(-6px) scale(1.015);
 }
 
 .hero-hand-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 40px;
 }
 
 .hero-hand-img.img-primary {
   position: relative;
   opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.45s ease;
 }
 
 .hero-hand-img.img-secondary {
@@ -822,24 +812,20 @@ strong {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 40px;
   opacity: 0;
-  transform: scale(0.98);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.45s ease;
   pointer-events: none;
 }
 
-/* Cross-fade between authentic app screenshots on hover / cursor near */
+/* Cross-fade cleanly between authentic screenshots without scaling or shifting */
 .hero-hand-stage.is-near .hero-hand-img.img-primary,
 .hero-hand-frame:hover .hero-hand-img.img-primary {
   opacity: 0;
-  transform: scale(1.02);
 }
 
 .hero-hand-stage.is-near .hero-hand-img.img-secondary,
 .hero-hand-frame:hover .hero-hand-img.img-secondary {
   opacity: 1;
-  transform: scale(1);
 }
 
 /* Floating Cloud Badges (Frosted Glass Editorial Sanctuary) */

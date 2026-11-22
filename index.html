@@ -3,108 +3,569 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BookTag — Legal & Support Sanctuary</title>
-  <meta name="description" content="BookTag Legal & Support Portal: Official Privacy Policy, Terms of Service, and App Store customer support desk.">
+  <title>BookTag — A Japanese-Inspired Sanctuary for Mindful Readers</title>
+  <meta name="description" content="BookTag is an offline-first reading companion and note sanctuary designed with Japanese editorial minimalism. Track progress, cultivate chapter reflections, and watch your Sakura tree blossom.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="booktag-icon.png">
-  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
 
+  <!-- ============================================================
+       1. HEADER / NAVIGATION
+       ============================================================ -->
   <nav class="site-nav">
-    <div class="nav-container">
+    <div class="nav-container" style="max-width: 1140px;">
       <a href="index.html" class="brand-link">
-        <img src="booktag-icon.png" alt="BookTag" class="brand-logo-img">
+        <img src="booktag-icon.png" alt="BookTag Logo" class="brand-logo-img">
         <span class="brand-name">BookTag</span>
+        <span class="brand-badge" style="margin-left: 4px;">v1.0.1</span>
       </a>
+
       <button class="nav-toggle" id="navToggle" onclick="toggleNavMenu(event)" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
       </button>
+
       <div class="nav-links" id="navLinks">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="support.html">Support</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store" style="padding: 7px 16px; margin-left: 6px;">
+          <svg viewBox="0 0 170 170">
+            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.77-11.72-14.19-6.19-9.69-10.9-20.73-14.13-33.11-3.23-12.39-4.85-24.16-4.85-35.31 0-14.24 3.39-26.04 10.18-35.4 6.78-9.35 15.54-14.12 26.27-14.32 4.9 0 10.35 1.25 16.35 3.75 6.01 2.5 10.02 3.8 12.04 3.91 2.41 0 6.64-1.34 12.69-4.02 6.05-2.68 11.33-3.89 15.84-3.64 12.19.64 21.99 5.38 29.4 14.22-10.66 6.45-15.88 15.54-15.66 27.27.22 9.04 3.65 16.66 10.28 22.86 6.63 6.2 14.39 9.8 23.27 10.8-2.17 6.42-4.78 12.82-7.83 19.22zm-32.91-105.12c0-7.07 2.59-13.78 7.78-20.13 5.18-6.35 11.66-10.42 19.42-12.21.33 1.3.49 2.5.49 3.59 0 7.07-2.73 13.91-8.19 20.53-5.46 6.61-12.07 10.59-19.82 11.93-.11-1.09-.68-2.32-.68-3.71z"/>
+          </svg>
+          <div class="btn-app-store-text">
+            <span class="btn-app-store-sub" style="font-size: 8.5px;">Download on</span>
+            <span class="btn-app-store-title" style="font-size: 13.5px;">App Store</span>
+          </div>
+        </a>
       </div>
     </div>
   </nav>
 
-  <main class="container">
-    <header class="page-header" style="text-align: center; border-bottom: none; margin-bottom: 24px; padding-bottom: 0;">
-      <img src="booktag-icon.png" alt="BookTag" class="hero-logo-img">
-      <div class="page-category">Official Documentation</div>
-      <h1 style="font-size: 42px;">BookTag Legal & Support</h1>
-      <p style="color: var(--text-secondary); max-width: 540px; margin: 0 auto; font-size: 17px;">
-        An offline-first personal reading sanctuary designed with Japanese editorial minimalism and absolute reader privacy.
-      </p>
-    </header>
+  <!-- ============================================================
+       2. HERO SECTION
+       ============================================================ -->
+  <header class="landing-wrapper">
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>🌸</span> Mindful Reading & Reflection Sanctuary
+        </div>
+        <h1 class="hero-title">
+          Read with <em>Intention</em>.<br>Remember with <em>Depth</em>.
+        </h1>
+        <p class="hero-desc">
+          Escape streak anxiety and gamified clutter. BookTag is an offline-first Japanese editorial reading companion. Track your daily pages, cultivate structured chapter reflections, and watch your library blossom organically.
+        </p>
 
-    <div class="portal-grid">
-      <a href="privacy.html" class="portal-card">
-        <div>
-          <span class="portal-card-icon" style="color: var(--accent-terracotta);">&#x1F6E1;&#xFE0F;</span>
-          <h3>Privacy Policy</h3>
+        <div class="hero-cta-group">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store">
+            <svg viewBox="0 0 170 170">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.77-11.72-14.19-6.19-9.69-10.9-20.73-14.13-33.11-3.23-12.39-4.85-24.16-4.85-35.31 0-14.24 3.39-26.04 10.18-35.4 6.78-9.35 15.54-14.12 26.27-14.32 4.9 0 10.35 1.25 16.35 3.75 6.01 2.5 10.02 3.8 12.04 3.91 2.41 0 6.64-1.34 12.69-4.02 6.05-2.68 11.33-3.89 15.84-3.64 12.19.64 21.99 5.38 29.4 14.22-10.66 6.45-15.88 15.54-15.66 27.27.22 9.04 3.65 16.66 10.28 22.86 6.63 6.2 14.39 9.8 23.27 10.8-2.17 6.42-4.78 12.82-7.83 19.22zm-32.91-105.12c0-7.07 2.59-13.78 7.78-20.13 5.18-6.35 11.66-10.42 19.42-12.21.33 1.3.49 2.5.49 3.59 0 7.07-2.73 13.91-8.19 20.53-5.46 6.61-12.07 10.59-19.82 11.93-.11-1.09-.68-2.32-.68-3.71z"/>
+            </svg>
+            <div class="btn-app-store-text">
+              <span class="btn-app-store-sub">Download on the</span>
+              <span class="btn-app-store-title">App Store</span>
+            </div>
+          </a>
+          <a href="#how-it-works" class="btn-secondary">
+            <span>Explore Experience</span>
+            <span>&darr;</span>
+          </a>
+        </div>
+
+        <div class="hero-trust-row">
+          <span>✓ Free Forever</span>
+          <span>•</span>
+          <span>✓ Zero Advertisements</span>
+          <span>•</span>
+          <span>✓ 100% Offline SQLite</span>
+          <span>•</span>
+          <span>✓ Cloud Backup</span>
+        </div>
+      </div>
+
+      <!-- High-Fidelity Mobile App Visual -->
+      <div class="mockup-wrapper">
+        <div class="mockup-glow"></div>
+        <div class="mockup-phone">
+          <div class="mockup-notch"></div>
+          <div class="mockup-screen">
+            <div class="mockup-top-bar">
+              <span style="font-size: 11px; color: #8A9E8B; font-weight: 600; letter-spacing: 0.5px;">CURRENTLY READING</span>
+              <span style="font-size: 12px; color: #D8A765;">★ 5.0</span>
+            </div>
+
+            <!-- Deep Forest Green Book Card with Sakura Blossom SVG -->
+            <div class="mockup-book-card">
+              <!-- Custom Sakura Tree Blossom Artwork -->
+              <svg class="mockup-tree-svg" viewBox="0 0 160 140" fill="none">
+                <defs>
+                  <linearGradient id="trunkGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#3D2817"/>
+                    <stop offset="100%" stop-color="#6B4E31"/>
+                  </linearGradient>
+                  <linearGradient id="sakuraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFB7C5"/>
+                    <stop offset="100%" stop-color="#E07965"/>
+                  </linearGradient>
+                  <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#A7B69C"/>
+                    <stop offset="100%" stop-color="#55755E"/>
+                  </linearGradient>
+                </defs>
+                <!-- Tree Trunk & Branches -->
+                <path d="M80 135 L80 90 Q80 75 62 62 Q52 54 44 48" stroke="url(#trunkGrad)" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M80 90 Q80 72 98 58 Q110 48 118 42" stroke="url(#trunkGrad)" stroke-width="4" stroke-linecap="round"/>
+                <path d="M80 75 Q78 55 80 38" stroke="url(#trunkGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M62 62 Q56 46 62 34" stroke="url(#trunkGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Sakura Flowers & Petals in Bloom -->
+                <circle cx="44" cy="48" r="9" fill="url(#sakuraGrad)" opacity="0.95"/>
+                <circle cx="118" cy="42" r="10" fill="url(#sakuraGrad)" opacity="0.95"/>
+                <circle cx="80" cy="38" r="11" fill="url(#sakuraGrad)" opacity="0.98"/>
+                <circle cx="62" cy="34" r="8" fill="url(#sakuraGrad)" opacity="0.9"/>
+                <circle cx="98" cy="58" r="8.5" fill="url(#sakuraGrad)" opacity="0.92"/>
+                <circle cx="54" cy="74" r="7.5" fill="url(#sakuraGrad)" opacity="0.85"/>
+                <circle cx="106" cy="72" r="7.5" fill="url(#sakuraGrad)" opacity="0.85"/>
+                <!-- Subtle Leaves -->
+                <ellipse cx="36" cy="56" rx="4.5" ry="2.5" fill="url(#leafGrad)" transform="rotate(-30 36 56)"/>
+                <ellipse cx="126" cy="50" rx="4.5" ry="2.5" fill="url(#leafGrad)" transform="rotate(35 126 50)"/>
+                <ellipse cx="88" cy="30" rx="4" ry="2" fill="url(#leafGrad)" transform="rotate(15 88 30)"/>
+                <!-- Falling Petals -->
+                <circle cx="92" cy="100" r="2.8" fill="#FFB7C5" opacity="0.85"/>
+                <circle cx="70" cy="112" r="2.4" fill="#E07965" opacity="0.75"/>
+                <circle cx="110" cy="118" r="2.2" fill="#FFB7C5" opacity="0.8"/>
+              </svg>
+
+              <div class="mockup-book-title">The Courage to Be Disliked</div>
+              <div class="mockup-book-author">Ichiro Kishimi &amp; Fumitake Koga</div>
+
+              <div class="mockup-progress-bar-bg">
+                <div class="mockup-progress-bar-fill"></div>
+              </div>
+
+              <div class="mockup-progress-stats">
+                <span>Page 196 of 288</span>
+                <span style="color: #D47762; font-weight: 600;">68% Completed</span>
+              </div>
+            </div>
+
+            <!-- Floating Chapter Reflection Note -->
+            <div class="mockup-note-card">
+              <div class="mockup-note-tag">KEY LEARNING • CHAPTER 3</div>
+              <p class="mockup-note-content">
+                "All interpersonal relationship troubles are caused by intruding on other people's tasks or having one's own tasks intruded upon."
+              </p>
+            </div>
+
+            <div style="display: flex; gap: 8px;">
+              <div style="flex: 1; background: #161D26; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 10px; text-align: center;">
+                <div style="font-size: 14px; font-weight: 700; color: #D8A765;">12</div>
+                <div style="font-size: 9.5px; color: #8E9893; text-transform: uppercase;">Chapters</div>
+              </div>
+              <div style="flex: 1; background: #161D26; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 10px; text-align: center;">
+                <div style="font-size: 14px; font-weight: 700; color: #D47762;">18</div>
+                <div style="font-size: 9.5px; color: #8E9893; text-transform: uppercase;">Notes</div>
+              </div>
+              <div style="flex: 1; background: #161D26; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 10px; text-align: center;">
+                <div style="font-size: 14px; font-weight: 700; color: #A7B69C;">Offline</div>
+                <div style="font-size: 9.5px; color: #8E9893; text-transform: uppercase;">Synced</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="landing-wrapper">
+
+    <!-- ============================================================
+         3. SOCIAL PROOF & METRICS
+         ============================================================ -->
+    <section class="landing-section" id="social-proof">
+      <div class="section-header-center">
+        <span class="section-pill">Reader Appreciation</span>
+        <h2 class="section-title">Built for Those Who Value Depth Over Speed</h2>
+        <p class="section-subtitle">Join readers who have exchanged vanity metrics for quiet, lasting retention.</p>
+      </div>
+
+      <!-- Numbers Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-num">50+</div>
+          <div class="metric-label">Active Readers Worldwide</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">100%</div>
+          <div class="metric-label">Offline-First Local SQLite</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">0</div>
+          <div class="metric-label">Ads, Badges, or Trackers</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">5.0 ★</div>
+          <div class="metric-label">Average App Store Rating</div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "BookTag cured my reading anxiety. Instead of stressing over an arbitrary reading streak, I finally have a calm sanctuary where my thoughts and notes actually stay organized."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EV</div>
+            <div>
+              <div class="author-name">Elena V.</div>
+              <div class="author-role">Product Designer &amp; Reader</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "The chapter-by-chapter reflection model is a masterclass in retention. I remember twice as much of what I read now, and the search finds any quote in seconds."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div>
+              <div class="author-name">Marcus K.</div>
+              <div class="author-role">Non-Fiction Reader &amp; Essayist</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Offline mode actually works. I flew across the Atlantic with airplane mode on, read three chapters, took notes, and everything synced seamlessly when I landed."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DP</div>
+            <div>
+              <div class="author-name">David P.</div>
+              <div class="author-role">Software Engineering Lead</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. KEY BENEFITS (Problem → Outcome)
+         ============================================================ -->
+    <section class="landing-section" id="benefits">
+      <div class="section-header-center">
+        <span class="section-pill">Why BookTag</span>
+        <h2 class="section-title">A Thoughtful Antidote to Modern Reading Apps</h2>
+        <p class="section-subtitle">We stripped away the noise of social feeds and streaks to solve three core reading problems.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon-badge terracotta">🌿</div>
+          <h3>Quiet Mindful Pacing</h3>
           <p>
-            Compliant with Apple Guideline 5.1.1, GDPR, and CCPA. Learn how your reading data, notes, and personal records are protected.
+            Traditional apps use push notifications and broken streak penalties that induce guilt. BookTag respects your tempo with an organic cherry blossom tree that flourishes naturally with each page you read.
           </p>
         </div>
-        <div class="card-action">Read Privacy Policy &rarr;</div>
-      </a>
 
-      <a href="terms.html" class="portal-card">
-        <div>
-          <span class="portal-card-icon" style="color: var(--accent-gold);">&#x1F4DC;</span>
-          <h3>Terms of Service</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon-badge gold">📖</div>
+          <h3>Chapter-Level Retention</h3>
           <p>
-            Review our End User License Agreement, intellectual property boundaries, user ownership of reflections, and usage terms.
+            Skimming 50 books a year is pointless if you forget them all in a month. BookTag lets you break books down into discrete chapters to capture summaries, key learnings, and personal reflections as you progress.
           </p>
         </div>
-        <div class="card-action" style="color: var(--accent-gold);">Read Terms &rarr;</div>
-      </a>
 
-      <a href="support.html" class="portal-card">
-        <div>
-          <span class="portal-card-icon" style="color: var(--accent-sage);">&#x1F4AC;</span>
-          <h3>Support & Help</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon-badge sage">🔒</div>
+          <h3>Total Data Sovereignty</h3>
           <p>
-            App Store support desk, answers to frequently asked questions on offline sync, reading milestones, and account deletion.
+            Never lose your private thoughts to poor subway connectivity or server outages. BookTag writes to an on-device SQLite database first, then quietly backs up to your private cloud storage when you reconnect.
           </p>
         </div>
-        <div class="card-action" style="color: var(--accent-sage);">Visit Support &rarr;</div>
-      </a>
-    </div>
+      </div>
+    </section>
 
-    <div class="callout-box green" style="margin-top: 40px;">
-      <p>
-        <strong>Self-Serve Account Deletion:</strong> BookTag users maintain full ownership and control over their data. You can permanently erase your profile and all reading records instantly inside the app by heading to <strong>Profile &rarr; Delete Account</strong>.
-      </p>
-    </div>
+    <!-- ============================================================
+         5. HOW IT WORKS
+         ============================================================ -->
+    <section class="landing-section" id="how-it-works">
+      <div class="section-header-center">
+        <span class="section-pill">Simple Workflow</span>
+        <h2 class="section-title">How BookTag Fits Into Your Daily Routine</h2>
+        <p class="section-subtitle">Designed to get out of your way so you can immerse yourself in reading.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">STEP 01</div>
+          <h3>Curate Your Library</h3>
+          <p>Search millions of published titles via Google Books or craft bespoke volumes manually with publisher, ISBN, and page count details.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 02</div>
+          <h3>Watch It Blossom</h3>
+          <p>Log pages read in a couple of taps. Watch your book's unique Sakura tree evolve from a modest green sprout into a full, vibrant cherry blossom.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 03</div>
+          <h3>Reflect by Chapter</h3>
+          <p>Organize chapter milestones and jot down tagged notes — summaries, memorable quotes, and reflections — instantly indexed for search.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 04</div>
+          <h3>Silent Cloud Backup</h3>
+          <p>Enjoy 100% offline freedom anywhere on Earth. The moment you reconnect to Wi-Fi or cellular, your private library syncs automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. PRODUCT FEATURES
+         ============================================================ -->
+    <section class="landing-section" id="features">
+      <div class="section-header-center">
+        <span class="section-pill">Meticulous Craft</span>
+        <h2 class="section-title">Features Built for True Readers</h2>
+        <p class="section-subtitle">Every pixel and interaction is tuned for beauty, speed, and contemplative focus.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌸</div>
+          <h3>Dynamic Sakura Growth</h3>
+          <p>A generative Japanese cherry blossom tree that dynamically reflects your percentage through each book, celebrating completion with beauty.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📑</div>
+          <h3>Chapter Breakdowns</h3>
+          <p>Divide long, ambitious works into digestible milestones. Check off chapters as you complete them and track progress granularly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏷️</div>
+          <h3>Categorized Reflections</h3>
+          <p>Filter notes by Summary, Key Learning, Important Idea, Reflection, or Question to revisit your thoughts with structured clarity.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Sub-Millisecond Search</h3>
+          <p>Powered by SQLite FTS5 (Full-Text Search). Retrieve that quote or philosophical insight you wrote three months ago in under 10ms.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏮</div>
+          <h3>Japanese Editorial Aesthetic</h3>
+          <p>Crafted with Ink Black backgrounds, Warm Parchment text, and Vermilion accents to eliminate eye strain during late-night reading sessions.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Zero Trackers or Data Selling</h3>
+          <p>Your notes and reading history are yours alone. We sell zero ads, employ no third-party data broker SDKs, and support instant self-serve account deletion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. PRICING & PLANS
+         ============================================================ -->
+    <section class="landing-section" id="pricing">
+      <div class="section-header-center">
+        <span class="section-pill">Transparent Sanctuary</span>
+        <h2 class="section-title">Pure Reading. No Subscriptions.</h2>
+        <p class="section-subtitle">Your private sanctuary should never be held behind an aggressive paywall.</p>
+      </div>
+
+      <div class="pricing-wrapper">
+        <div class="pricing-card">
+          <div class="pricing-tier">Standard Sanctuary</div>
+          <div class="pricing-price">$0</div>
+          <div class="pricing-tagline">Free Forever • No Credit Card Required</div>
+
+          <ul class="pricing-features-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Unlimited books, chapters, and notes</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Full-text search engine (FTS5 on-device)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dynamic Sakura blossom visual growth</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% Offline SQLite architecture</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Encrypted cloud backup &amp; multi-device sync</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Zero ads, zero trackers, full privacy</span>
+            </li>
+          </ul>
+
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store" style="width: 100%; justify-content: center; padding: 14px 24px;">
+            <svg viewBox="0 0 170 170">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.77-11.72-14.19-6.19-9.69-10.9-20.73-14.13-33.11-3.23-12.39-4.85-24.16-4.85-35.31 0-14.24 3.39-26.04 10.18-35.4 6.78-9.35 15.54-14.12 26.27-14.32 4.9 0 10.35 1.25 16.35 3.75 6.01 2.5 10.02 3.8 12.04 3.91 2.41 0 6.64-1.34 12.69-4.02 6.05-2.68 11.33-3.89 15.84-3.64 12.19.64 21.99 5.38 29.4 14.22-10.66 6.45-15.88 15.54-15.66 27.27.22 9.04 3.65 16.66 10.28 22.86 6.63 6.2 14.39 9.8 23.27 10.8-2.17 6.42-4.78 12.82-7.83 19.22zm-32.91-105.12c0-7.07 2.59-13.78 7.78-20.13 5.18-6.35 11.66-10.42 19.42-12.21.33 1.3.49 2.5.49 3.59 0 7.07-2.73 13.91-8.19 20.53-5.46 6.61-12.07 10.59-19.82 11.93-.11-1.09-.68-2.32-.68-3.71z"/>
+            </svg>
+            <div class="btn-app-store-text">
+              <span class="btn-app-store-sub">Get Started for Free</span>
+              <span class="btn-app-store-title">Download BookTag</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. FREQUENTLY ASKED QUESTIONS
+         ============================================================ -->
+    <section class="landing-section" id="faq">
+      <div class="section-header-center">
+        <span class="section-pill">Clarity</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about compatibility, privacy, and how BookTag works.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Does BookTag work completely offline?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, 100%. BookTag is engineered with an offline-first architecture. All books, chapter milestones, reading sessions, and notes are stored locally inside SQLite on your device first. You can read and write notes on flights, subways, or in the woods with zero network signal.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How does cloud sync work between devices?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            Whenever your phone is connected to the internet, BookTag silently synchronizes all your local records with your secure Supabase cloud vault. If you get a new iPhone or open BookTag on your iPad, your entire library, reading progress, and notes are restored automatically.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How does the Sakura blossom tree work?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            Each book features a dynamic Sakura blossom tree that evolves in real time based on your reading progress percentage. Starting as a delicate green shoot at 0%, it sprouts leafy branches at 25%, blooms with tender pink buds at 50%, and flourishes into full cherry blossom flowers when you reach the final pages.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is my reading data and private notes private?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, strictly private. We do not sell data to advertisers, use tracking cookies, or analyze the contents of your reading reflections. PostgreSQL Row-Level Security (RLS) guarantees that only your authenticated account can ever read or modify your library.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How do I delete my account or reading history?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            BookTag features full self-serve data deletion compliant with Apple Guideline 5.1.1. Simply open the app, head to <strong>Profile &rarr; Delete Account</strong>, and tap confirm. This immediately erases your local SQLite database and permanently wipes all cloud records.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Which devices are supported?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            BookTag is currently available for iOS devices running iOS 15.0 or later, including all modern iPhones and iPads.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. FINAL CALL TO ACTION
+         ============================================================ -->
+    <section class="landing-section" style="border-bottom: none; padding-bottom: 90px;">
+      <div class="final-cta-card">
+        <h2>Begin Your Mindful Reading Journey</h2>
+        <p>
+          Reclaim reading as a calm, contemplative practice. Download BookTag today and start cultivating your personal library sanctuary.
+        </p>
+
+        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-app-store" style="padding: 13px 28px;">
+          <svg viewBox="0 0 170 170">
+            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.77-11.72-14.19-6.19-9.69-10.9-20.73-14.13-33.11-3.23-12.39-4.85-24.16-4.85-35.31 0-14.24 3.39-26.04 10.18-35.4 6.78-9.35 15.54-14.12 26.27-14.32 4.9 0 10.35 1.25 16.35 3.75 6.01 2.5 10.02 3.8 12.04 3.91 2.41 0 6.64-1.34 12.69-4.02 6.05-2.68 11.33-3.89 15.84-3.64 12.19.64 21.99 5.38 29.4 14.22-10.66 6.45-15.88 15.54-15.66 27.27.22 9.04 3.65 16.66 10.28 22.86 6.63 6.2 14.39 9.8 23.27 10.8-2.17 6.42-4.78 12.82-7.83 19.22zm-32.91-105.12c0-7.07 2.59-13.78 7.78-20.13 5.18-6.35 11.66-10.42 19.42-12.21.33 1.3.49 2.5.49 3.59 0 7.07-2.73 13.91-8.19 20.53-5.46 6.61-12.07 10.59-19.82 11.93-.11-1.09-.68-2.32-.68-3.71z"/>
+          </svg>
+          <div class="btn-app-store-text">
+            <span class="btn-app-store-sub">Available on iOS</span>
+            <span class="btn-app-store-title">Download BookTag</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ============================================================
+       10. FOOTER
+       ============================================================ -->
   <footer class="site-footer">
-    <div class="footer-container">
+    <div class="footer-container" style="max-width: 1140px;">
       <a href="index.html" class="footer-brand">
         <img src="booktag-icon.png" alt="BookTag" class="footer-logo">
         <span class="footer-brand-name">BookTag</span>
       </a>
       <div class="footer-links">
+        <a href="#benefits">Benefits</a>
+        <span class="sep">&bull;</span>
+        <a href="#how-it-works">How It Works</a>
+        <span class="sep">&bull;</span>
+        <a href="#features">Features</a>
+        <span class="sep">&bull;</span>
         <a href="privacy.html">Privacy Policy</a>
         <span class="sep">&bull;</span>
         <a href="terms.html">Terms of Service</a>
         <span class="sep">&bull;</span>
         <a href="support.html">Support Desk</a>
         <span class="sep">&bull;</span>
-        <a href="mailto:verify@aniruddhamdhir.dev">verify@aniruddhamdhir.dev</a>
+        <a href="mailto:verify@aniruddhamdhir.dev">Contact Developer</a>
       </div>
-      <p class="footer-copyright">&copy; 2026 BookTag. Crafted by Aniruddha M Dhir. All rights reserved.</p>
+      <p class="footer-copyright">&copy; 2026 BookTag. Crafted with intention by Aniruddha M Dhir. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js?v=1.3"></script>
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>
-

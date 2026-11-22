@@ -53,3 +53,21 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
+
+// FAQ Accordion Toggle
+function toggleFaq(btn) {
+  const item = btn.closest(".faq-item");
+  if (!item) return;
+  const isOpen = item.classList.contains("open");
+  
+  // Close other open FAQ items (optional accordion feel)
+  document.querySelectorAll(".faq-item.open").forEach((el) => {
+    if (el !== item) el.classList.remove("open");
+  });
+
+  if (isOpen) {
+    item.classList.remove("open");
+  } else {
+    item.classList.add("open");
+  }
+}

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="booktag-icon.png">
-  <link rel="stylesheet" href="style.css?v=3.4">
+  <link rel="stylesheet" href="style.css?v=3.5">
 </head>
 <body>
 
@@ -63,7 +63,7 @@
   <!-- ============================================================
        2. HERO SECTION
        ============================================================ -->
-  <header class="landing-wrapper" style="position: relative; z-index: 2;">
+  <header style="position: relative; z-index: 2; width: 100%;">
     <!-- Gentle Sakura Petals Particle Layer -->
     <div class="falling-petals-container" aria-hidden="true">
       <div class="floating-petal"></div>
@@ -73,71 +73,79 @@
       <div class="floating-petal"></div>
     </div>
 
-    <section class="hero-clean-section">
-      <!-- Regular Heading Above Phone with Pretty Editorial Italic Gradient -->
-      <h1 class="hero-clean-title">
-        <span class="hero-title-main animated-gradient-text">BookTag</span>
-      </h1>
+    <section class="hero-split-section">
+      <div class="hero-split-container">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="hero-split-left">
+          <h1 class="hero-editorial-title">
+            Keep a Journal <br class="desktop-only">
+            for Your <br class="mobile-only">Reading Life
+          </h1>
+          <p class="hero-editorial-sub">
+            Track what you read, reflect on what it means, <br class="desktop-only">
+            and grow as a reader.
+          </p>
 
-      <!-- Studio Hand Holding Phone Mockup Stage -->
-      <div class="hero-hand-stage" id="heroHandStage">
-        <div class="hero-hand-glow"></div>
-
-        <!-- Floating Cloud Badges (Dynamic on Hover / Cursor Proximity) -->
-        <div class="floating-cloud cloud-1" aria-label="Reading sanctuary feature">
-          <div class="cloud-text-wrapper">
-            <span class="cloud-text cloud-text-default">Your Personal Reading Sanctuary</span>
-            <span class="cloud-text cloud-text-near">Track Every Page You Read</span>
+          <div class="hero-editorial-actions">
+            <a href="https://apps.apple.com/app/booktag/id6831411297" target="_blank" rel="noopener" class="btn-terracotta-cta btn-shine">
+              <span>Start Your Reading Journal</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <span class="hero-editorial-meta">100% Free • Private &amp; Offline-First • Available on iOS</span>
           </div>
         </div>
 
-        <div class="floating-cloud cloud-2" aria-label="Visual growth feature">
-          <div class="cloud-text-wrapper">
-            <span class="cloud-text cloud-text-default">A Quiet Space for True Book Lovers</span>
-            <span class="cloud-text cloud-text-near">Watch Your Tree Bloom as You Read</span>
+        <!-- Right Column: Hand Mockup Stage & 3 Floating Clouds -->
+        <div class="hero-split-right">
+          <div class="hero-hand-stage" id="heroHandStage">
+            <div class="hero-hand-glow"></div>
+
+            <!-- Floating Cloud Badges (Dynamic on Hover / Cursor Proximity) -->
+            <div class="floating-cloud cloud-1" aria-label="Reading sanctuary feature">
+              <div class="cloud-text-wrapper">
+                <span class="cloud-text cloud-text-default">Your Personal Reading Sanctuary</span>
+                <span class="cloud-text cloud-text-near">Track Every Page You Read</span>
+              </div>
+            </div>
+
+            <div class="floating-cloud cloud-2" aria-label="Visual growth feature">
+              <div class="cloud-text-wrapper">
+                <span class="cloud-text cloud-text-default">A Quiet Space for True Book Lovers</span>
+                <span class="cloud-text cloud-text-near">Watch Your Tree Bloom as You Read</span>
+              </div>
+            </div>
+
+            <div class="floating-cloud cloud-3" aria-label="Chapter notes and offline feature">
+              <div class="cloud-text-wrapper">
+                <span class="cloud-text cloud-text-default">Capture Reflections &amp; Notes</span>
+                <span class="cloud-text cloud-text-near">100% Offline-First Experience</span>
+              </div>
+            </div>
+
+            <!-- Hand Holding Phone Frame -->
+            <div class="hero-hand-frame" id="heroHandFrame">
+              <!-- Primary Default Screen: Mindful Quote Screen -->
+              <img 
+                src="hero-hand-quote.png?v=3.5" 
+                alt="Hand holding iPhone displaying BookTag quote screen: A small step every day leads to big results" 
+                class="hero-hand-img img-primary"
+              >
+              <!-- Secondary Transition Screen: Authentic App Home Screen with Cherry Blossom Tree & Reading Stats -->
+              <img 
+                src="hero-hand-home.png?v=3.5" 
+                alt="Hand holding iPhone displaying BookTag home screen with Rich Dad Poor Dad, 92% Sakura tree progress, and stats" 
+                class="hero-hand-img img-secondary"
+              >
+              <!-- Screen-Only Hotspot: Swaps screens and clouds ONLY when hovering directly over the phone screen inside the hand -->
+              <div class="phone-screen-hotspot" id="phoneScreenHotspot" aria-label="BookTag screen interactive preview" role="button" tabindex="0"></div>
+            </div>
           </div>
         </div>
 
-        <div class="floating-cloud cloud-3" aria-label="Chapter notes and offline feature">
-          <div class="cloud-text-wrapper">
-            <span class="cloud-text cloud-text-default">Capture Reflections &amp; Notes</span>
-            <span class="cloud-text cloud-text-near">100% Offline-First Experience</span>
-          </div>
-        </div>
-
-        <!-- Hand Holding Phone Frame -->
-        <div class="hero-hand-frame" id="heroHandFrame">
-          <!-- Primary Default Screen: Mindful Quote Screen -->
-          <img 
-            src="hero-hand-quote.png?v=3.4" 
-            alt="Hand holding iPhone displaying BookTag quote screen: A small step every day leads to big results" 
-            class="hero-hand-img img-primary"
-          >
-          <!-- Secondary Transition Screen: Authentic App Home Screen with Cherry Blossom Tree & Reading Stats -->
-          <img 
-            src="hero-hand-home.png?v=3.4" 
-            alt="Hand holding iPhone displaying BookTag home screen with Rich Dad Poor Dad, 92% Sakura tree progress, and stats" 
-            class="hero-hand-img img-secondary"
-          >
-          <!-- Screen-Only Hotspot: Swaps screens and clouds ONLY when hovering directly over the phone screen inside the hand -->
-          <div class="phone-screen-hotspot" id="phoneScreenHotspot" aria-label="BookTag screen interactive preview" role="button" tabindex="0"></div>
-        </div>
-      </div>
-
-      <!-- Call to Action: Placed Underneath Hand Mockup -->
-      <div class="hero-clean-cta">
-        <p class="hero-lead-text">
-          Read with peace of mind and reconnect with the reader in you.
-        </p>
-        <a href="https://apps.apple.com/app/booktag/id6831411297" target="_blank" rel="noopener" class="btn-app-store btn-shine">
-          <svg viewBox="0 0 384 512" aria-hidden="true">
-            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-          </svg>
-          <div class="btn-app-store-text">
-            <span class="btn-app-store-sub">Download on the</span>
-            <span class="btn-app-store-title">App Store</span>
-          </div>
-        </a>
       </div>
     </section>
   </header>
@@ -556,6 +564,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3.4"></script>
+  <script src="script.js?v=3.5"></script>
 </body>
 </html>

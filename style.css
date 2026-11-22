@@ -22,6 +22,11 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -32,6 +37,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .site-nav {
@@ -43,15 +50,19 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
   padding: 16px 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-container {
-  max-width: 860px;
+  width: 100%;
+  max-width: 1140px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  box-sizing: border-box;
 }
 
 .brand-link {
@@ -532,6 +543,11 @@ strong {
 }
 
 /* Button Shine Sweep (Villix style) */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
 .btn-shine::after {
   content: "";
   position: absolute;
@@ -733,68 +749,167 @@ strong {
   border: 0;
 }
 
-.hero-clean-section {
+/* ============================================================
+   Editorial Split Hero Section (Recreated from Design)
+   ============================================================ */
+
+.hero-split-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 75px);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: 16px 0 40px;
+  padding: 30px 0 50px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 75% 45%, rgba(212, 119, 98, 0.16) 0%, rgba(20, 32, 26, 0.35) 45%, transparent 70%);
+}
+
+.hero-split-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 56px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  box-sizing: border-box;
   position: relative;
   z-index: 2;
-  overflow: visible;
 }
 
-.hero-clean-title {
-  display: block;
-  font-family: var(--font-serif);
-  text-align: center;
-  margin: 0 auto 12px;
-  max-width: 920px;
-}
-
-.hero-title-main {
-  font-family: var(--font-serif);
-  font-size: clamp(52px, 6.8vw, 84px);
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-  display: inline-block;
-  text-shadow: 0 0 40px rgba(212, 119, 98, 0.22);
-}
-
-.hero-clean-cta {
-  margin-top: 24px;
-  margin-bottom: 24px;
+/* Left Column: Headline, Subtitle, CTA */
+.hero-split-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  position: relative;
+  align-items: flex-start;
+  text-align: left;
   z-index: 10;
 }
 
-.hero-lead-text {
-  font-family: var(--font-sans);
-  font-size: 19px;
-  color: var(--text-secondary);
-  max-width: 580px;
-  margin: 0 auto;
-  line-height: 1.5;
-  text-align: center;
+.hero-editorial-title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 4.8vw, 62px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.6px;
+  color: #F1E7D9;
+  margin: 0 0 22px 0;
+  max-width: 600px;
+}
+
+.hero-editorial-sub {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 1.7vw, 21px);
   font-weight: 400;
+  font-style: italic;
+  color: #A7B69C;
+  line-height: 1.6;
+  margin: 0 0 36px 0;
+  max-width: 500px;
   letter-spacing: -0.1px;
 }
 
+.hero-editorial-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.btn-terracotta-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #C86D56;
+  color: #FFF;
+  font-family: var(--font-sans);
+  font-size: 16.5px;
+  font-weight: 600;
+  padding: 15px 32px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(200, 109, 86, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-terracotta-cta:hover {
+  background: #D47762;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(200, 109, 86, 0.48);
+  color: #FFF;
+}
+
+.btn-terracotta-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-terracotta-cta:hover svg {
+  transform: translateX(4px);
+}
+
+.hero-editorial-meta {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.2px;
+  margin-left: 6px;
+}
+
+/* Right Column: Hand Mockup Stage & 3 Floating Clouds */
+.hero-split-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-split-right .hero-hand-stage {
+  margin: 0 auto;
+  max-width: 660px;
+  width: 100%;
+}
+
+.hero-split-right .hero-hand-glow {
+  width: 140%;
+  height: 120%;
+  top: -10%;
+  left: -20%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(212, 119, 98, 0.26) 0%, rgba(24, 40, 33, 0.42) 50%, transparent 75%);
+}
+
+/* Clouds adapted for split right stage */
+.hero-split-right .cloud-1 {
+  top: 6%;
+  left: -35px;
+  animation: floatCloud1 7s ease-in-out infinite;
+}
+
+.hero-split-right .cloud-2 {
+  top: 22%;
+  right: -25px;
+  animation: floatCloud2 8.5s ease-in-out infinite;
+}
+
+.hero-split-right .cloud-3 {
+  bottom: 16%;
+  left: -25px;
+  animation: floatCloud3 6.8s ease-in-out infinite;
+}
+
 /* ============================================================
-   Studio Hand Holding Phone Hero Stage (Villix & Multi Inspired)
+   Studio Hand Holding Phone Hero Stage (Core Mockup Elements)
    ============================================================ */
 
 .hero-hand-stage {
   position: relative;
   width: 100%;
-  max-width: 1240px;
-  margin: 10px auto 0;
+  max-width: 660px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1007,94 +1122,86 @@ strong {
   }
 }
 
-@media (max-width: 1100px) {
-  .hero-hand-stage {
-    max-width: 960px;
-  }
-  .cloud-1 {
-    top: 10%;
-    left: 20px;
-  }
-  .cloud-2 {
-    top: 14%;
-    right: 20px;
-  }
-  .cloud-3 {
-    bottom: 20%;
-    left: 25px;
-  }
+.desktop-only {
+  display: inline;
+}
+
+.mobile-only {
+  display: none;
 }
 
 @media (max-width: 900px) {
-  .hero-title-main {
-    font-size: clamp(46px, 7vw, 68px);
+  .desktop-only {
+    display: none !important;
   }
-  .hero-hand-stage {
-    max-width: 780px;
-  }
-  .cloud-1 {
-    top: 8%;
-    left: 12px;
-  }
-  .cloud-2 {
-    top: 12%;
-    right: 12px;
-  }
-  .cloud-3 {
-    bottom: 16%;
-    left: 12px;
+  .mobile-only {
+    display: inline !important;
   }
 }
 
-@media (max-width: 768px) {
-  .hero-clean-section {
-    padding-top: 12px;
+@media (max-width: 1100px) {
+  .hero-split-container {
+    padding: 0 32px;
+    gap: 20px;
+  }
+  .hero-split-right .cloud-1 { left: -15px; }
+  .hero-split-right .cloud-2 { right: -15px; }
+  .hero-split-right .cloud-3 { left: -15px; }
+}
+
+@media (max-width: 900px) {
+  .hero-split-section {
+    padding: 30px 0 60px;
   }
 
-  .hero-clean-title {
-    margin-bottom: 10px;
+  .hero-split-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    padding: 0 24px;
   }
 
-  .hero-title-main {
-    font-size: clamp(38px, 11vw, 52px);
+  .hero-split-left {
+    align-items: center;
+    text-align: center;
   }
 
-  .hero-lead-text {
-    font-size: 16px;
-    padding: 0 20px;
-  }
-
-  .hero-hand-stage {
-    max-width: 380px;
-    margin-top: 20px;
+  .hero-editorial-title {
+    font-size: clamp(30px, 7vw, 42px);
     margin-bottom: 16px;
+    max-width: 100%;
+    word-break: normal;
   }
 
-  .hero-hand-frame {
-    max-width: 340px;
-    border-radius: 32px;
+  .hero-editorial-sub {
+    font-size: clamp(16px, 3.8vw, 19px);
+    margin-bottom: 26px;
+    max-width: 100%;
   }
 
-  .hero-hand-img {
-    border-radius: 32px;
+  .hero-editorial-actions {
+    align-items: center;
   }
 
-  .floating-cloud {
-    padding: 8px 18px;
-  }
-
-  .cloud-text {
+  .hero-editorial-meta {
     font-size: 12px;
+    text-align: center;
+    line-height: 1.4;
+    margin-left: 0;
   }
 
-  .cloud-1 {
+  .hero-split-right .hero-hand-stage {
+    max-width: 440px;
+  }
+
+  .hero-split-right .cloud-1 {
     top: -16px;
     left: 50%;
     transform: translateX(-50%);
     animation: floatCloudMobile1 6s ease-in-out infinite;
   }
 
-  .cloud-2 {
+  .hero-split-right .cloud-2 {
     top: auto;
     bottom: -24px;
     right: auto;
@@ -1103,13 +1210,61 @@ strong {
     animation: floatCloudMobile2 6.5s ease-in-out 1s infinite;
   }
 
-  .cloud-3 {
+  .hero-split-right .cloud-3 {
     display: none;
   }
+}
 
-  .hero-clean-cta {
-    margin-top: 56px;
-    margin-bottom: 24px;
+@media (max-width: 600px) {
+  .hero-split-section {
+    padding: 24px 0 44px;
+  }
+
+  .hero-split-container {
+    padding: 0 18px;
+    gap: 32px;
+  }
+
+  .hero-editorial-title {
+    font-size: clamp(26px, 7.8vw, 36px);
+    line-height: 1.22;
+  }
+
+  .hero-editorial-sub {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-editorial-meta {
+    font-size: 11.5px;
+    max-width: 290px;
+    margin: 0 auto;
+  }
+
+  .hero-split-right .hero-hand-stage {
+    max-width: 330px;
+  }
+
+  .hero-split-right .hero-hand-frame {
+    max-width: 310px;
+    border-radius: 28px;
+  }
+
+  .hero-split-right .hero-hand-img {
+    border-radius: 28px;
+  }
+
+  .floating-cloud {
+    padding: 8px 16px;
+  }
+
+  .cloud-text {
+    font-size: 11.5px;
+  }
+
+  .btn-terracotta-cta {
+    font-size: 15px;
+    padding: 13px 26px;
   }
 
   @keyframes floatCloudMobile1 {
@@ -1122,15 +1277,6 @@ strong {
   }
 
   @keyframes floatCloudMobile2 {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-6px);
-    }
-  }
-
-  @keyframes floatCloudMobile3 {
     0%, 100% {
       transform: translateX(-50%) translateY(0);
     }

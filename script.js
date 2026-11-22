@@ -235,3 +235,63 @@ function toggleSyncDemo(checkbox) {
     statusText.innerHTML = "<strong>Airplane / Offline Mode:</strong> 100% functional. All pages, notes, and progress write directly to on-device SQLite with zero network latency.";
   }
 }
+
+// ── Hero Scene Cursor Proximity & Interactive Screenshot Swap ──
+document.addEventListener("DOMContentLoaded", () => {
+  const openBookScene = document.getElementById("openBookScene");
+  const openBookPhone = document.getElementById("openBookPhone");
+  if (!openBookScene) return;
+
+  let isNear = false;
+  let rafId = null;
+
+  // Track cursor distance relative to open book scene center
+  const onMouseMove = (e) => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      rafId = null;
+      const rect = openBookScene.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const distX = e.clientX - centerX;
+      const distY = e.clientY - centerY;
+      const distance = Math.hypot(distX, distY);
+
+      // Proximity threshold: 340px or half bounding box width + margin
+      const threshold = Math.max(rect.width * 0.58, 320);
+
+      if (distance < threshold && !isNear) {
+        isNear = true;
+        openBookScene.classList.add("is-near");
+      } else if (distance >= threshold && isNear) {
+        isNear = false;
+        openBookScene.classList.remove("is-near");
+      }
+    });
+  };
+
+  window.addEventListener("mousemove", onMouseMove, { passive: true });
+
+  // Direct hover events
+  openBookScene.addEventListener("mouseenter", () => {
+    isNear = true;
+    openBookScene.classList.add("is-near");
+  });
+
+  // Tap or click on phone or clouds to toggle state (especially on touch devices)
+  if (openBookPhone) {
+    openBookPhone.addEventListener("click", () => {
+      isNear = !openBookScene.classList.contains("is-near");
+      openBookScene.classList.toggle("is-near", isNear);
+    });
+  }
+
+  // Click on any floating cloud to toggle
+  document.querySelectorAll(".floating-cloud").forEach((cloud) => {
+    cloud.addEventListener("click", () => {
+      isNear = !openBookScene.classList.contains("is-near");
+      openBookScene.classList.toggle("is-near", isNear);
+    });
+  });
+});

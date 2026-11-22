@@ -712,82 +712,263 @@ strong {
   color: var(--accent-terracotta) !important;
 }
 
-/* Hero Section */
-.hero-section {
-  padding: 60px 0 80px;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
-  align-items: center;
-}
+/* ============================================================
+   Open Book Hero Stage (Clean & Cinematic)
+   ============================================================ */
 
-.hero-content {
+.hero-clean-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-}
-
-.hero-pill {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(212, 119, 98, 0.12);
-  border: 1px solid rgba(212, 119, 98, 0.3);
-  color: var(--accent-terracotta);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  margin-bottom: 22px;
+  text-align: center;
+  padding: 40px 0 60px;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-title {
+.hero-clean-title {
   font-family: var(--font-serif);
-  font-size: 54px;
-  line-height: 1.14;
-  font-weight: 600;
-  letter-spacing: -0.8px;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  max-width: 820px;
 }
 
-.hero-title em {
+.hero-clean-title span {
   font-style: italic;
   color: var(--accent-terracotta);
+}
+
+.hero-clean-cta {
+  margin-bottom: 44px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Open Book Scene & Perspective */
+.open-book-scene {
+  position: relative;
+  width: 720px;
+  max-width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.open-book-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(ellipse at center, rgba(212, 119, 98, 0.16) 0%, rgba(24, 40, 33, 0.32) 45%, transparent 72%);
+  filter: blur(50px);
+  z-index: 1;
+}
+
+/* The Physical Open Book */
+.open-book-spread {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 520px;
+  background: #141D17;
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: 
+    0 35px 80px rgba(0, 0, 0, 0.85),
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(216, 167, 101, 0.25);
+  display: flex;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+/* Hardcover Outer Frame */
+.open-book-spread::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #1C2B22 0%, #0F1712 100%);
+  z-index: -1;
+  border: 1px solid rgba(216, 167, 101, 0.3);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* Stacked Paper Block Edges */
+.open-book-spread::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 32px;
+  right: 32px;
+  height: 11px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #C5BCAE 0px,
+    #9C9283 1px,
+    #C5BCAE 2px
+  );
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
+  opacity: 0.85;
+}
+
+/* Left & Right Pages */
+.book-page {
+  flex: 1;
+  background: linear-gradient(180deg, #F9F6F0 0%, #F3ECE0 100%);
+  border-radius: 8px;
+  padding: 34px 28px;
+  color: #2D332F;
+  position: relative;
+  box-shadow: inset 0 0 30px rgba(180, 165, 145, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.book-page-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(90deg, #EDE5D5 0%, #FAF6EE 75%, #DFD5C1 100%);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.book-page-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(90deg, #DFD5C1 0%, #FAF6EE 25%, #EDE5D5 100%);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Center Crease / Spine Shadow */
+.book-spine-crease {
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 50%;
+  width: 44px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, transparent, rgba(50, 40, 30, 0.3) 45%, rgba(30, 20, 15, 0.45) 50%, rgba(50, 40, 30, 0.3) 55%, transparent);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Crimson Silk Bookmark Ribbon */
+.book-ribbon {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: calc(100% + 40px);
+  background: linear-gradient(180deg, #B9533E 0%, #D47762 60%, #9E3E2B 100%);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.35);
+  z-index: 4;
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 10px), 50% 100%, 0% calc(100% - 10px));
+}
+
+/* Faint Page Text & Watermarks */
+.book-page-header {
   font-family: var(--font-serif);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #7D7364;
+  margin-bottom: 22px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 8px;
 }
 
-.hero-desc {
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--text-secondary);
-  margin-bottom: 32px;
-  max-width: 540px;
-}
-
-.hero-cta-group {
+.book-page-body-lines {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0.85;
 }
 
-.hero-trust-row {
+.book-page-line {
+  height: 2px;
+  background: rgba(100, 90, 80, 0.12);
+  border-radius: 2px;
+}
+
+.book-page-quote {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  font-style: italic;
+  color: #4A443B;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+/* Phone Nestled On Top of Open Book */
+.open-book-phone-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 255px;
+}
+
+.open-book-phone {
+  width: 100%;
+  background: #000000;
+  border: 9px solid #1C212A;
+  border-radius: 42px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.75),
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 12.5px;
-  color: var(--text-muted);
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-trust-row span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.open-book-phone:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 32px 75px rgba(0, 0, 0, 0.85),
+    0 12px 28px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(212, 119, 98, 0.35);
+}
+
+.open-book-phone-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 32px;
+}
+
+@media (max-width: 768px) {
+  .hero-clean-title {
+    font-size: 36px;
+  }
+
+  .open-book-scene {
+    width: 100%;
+  }
+
+  .open-book-spread {
+    min-height: 480px;
+    padding: 12px 14px;
+  }
+
+  .book-page {
+    padding: 20px 14px;
+  }
+
+  .open-book-phone-holder {
+    width: 220px;
+  }
 }
 
 /* Phone Mockup with Real Screenshot */

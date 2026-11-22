@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="booktag-icon.png">
-  <link rel="stylesheet" href="style.css?v=3.2">
+  <link rel="stylesheet" href="style.css?v=3.3">
 </head>
 <body>
 
@@ -74,17 +74,16 @@
     </div>
 
     <section class="hero-clean-section">
-      <h1 class="hero-clean-title">
-        <span class="hero-title-main">BookTag</span>
-        <span class="animated-gradient-text hero-title-sub">Your Personal Reading Sanctuary</span>
-      </h1>
-      <p class="hero-lead-text">
-        Read with peace of mind and reconnect with the reader in you.
-      </p>
-
-      <!-- Studio Hand Holding Phone Mockup Stage -->
+      <!-- Studio Hand Holding Phone Mockup Stage (Primary Centerpiece) -->
       <div class="hero-hand-stage" id="heroHandStage">
         <div class="hero-hand-glow"></div>
+
+        <!-- Atmospheric Backdrop Brand Behind Phone: BOOK on left, TAG on right -->
+        <h1 class="hero-backdrop-brand">
+          <span class="hero-backdrop-word word-book">BOOK</span>
+          <span class="visually-hidden">BookTag — Your Personal Reading Sanctuary</span>
+          <span class="hero-backdrop-word word-tag">TAG</span>
+        </h1>
 
         <!-- Floating Cloud Badges (Dynamic on Hover / Cursor Proximity) -->
         <div class="floating-cloud cloud-1" aria-label="Reading sanctuary feature">
@@ -112,13 +111,13 @@
         <div class="hero-hand-frame" id="heroHandFrame">
           <!-- Primary Default Screen: Mindful Quote Screen -->
           <img 
-            src="hero-hand-quote.png?v=3.2" 
+            src="hero-hand-quote.png?v=3.3" 
             alt="Hand holding iPhone displaying BookTag quote screen: A small step every day leads to big results" 
             class="hero-hand-img img-primary"
           >
           <!-- Secondary Transition Screen: Authentic App Home Screen with Cherry Blossom Tree & Reading Stats -->
           <img 
-            src="hero-hand-home.png?v=3.2" 
+            src="hero-hand-home.png?v=3.3" 
             alt="Hand holding iPhone displaying BookTag home screen with Rich Dad Poor Dad, 92% Sakura tree progress, and stats" 
             class="hero-hand-img img-secondary"
           >
@@ -129,6 +128,9 @@
 
       <!-- Call to Action: Placed Underneath Hand Mockup -->
       <div class="hero-clean-cta">
+        <p class="hero-lead-text">
+          Read with peace of mind and reconnect with the reader in you.
+        </p>
         <a href="https://apps.apple.com/app/booktag/id6831411297" target="_blank" rel="noopener" class="btn-app-store btn-shine">
           <svg viewBox="0 0 384 512" aria-hidden="true">
             <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
@@ -556,6 +558,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3.2"></script>
+  <script src="script.js?v=3.3"></script>
 </body>
 </html>

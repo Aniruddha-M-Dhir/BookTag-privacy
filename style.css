@@ -759,7 +759,7 @@ strong {
 .hero-hand-stage {
   position: relative;
   width: 100%;
-  max-width: 580px;
+  max-width: 820px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -769,12 +769,12 @@ strong {
 
 .hero-hand-glow {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: radial-gradient(ellipse at 50% 45%, rgba(212, 119, 98, 0.22) 0%, rgba(24, 40, 33, 0.38) 45%, transparent 72%);
-  filter: blur(60px);
+  width: 120%;
+  height: 110%;
+  top: -5%;
+  left: -10%;
+  background: radial-gradient(ellipse at 50% 45%, rgba(212, 119, 98, 0.24) 0%, rgba(24, 40, 33, 0.42) 50%, transparent 74%);
+  filter: blur(70px);
   z-index: 1;
   pointer-events: none;
 }
@@ -783,7 +783,7 @@ strong {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 440px;
+  max-width: 530px;
   cursor: pointer;
   background: transparent;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -843,7 +843,7 @@ strong {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(216, 167, 101, 0.35);
   border-radius: 9999px;
-  padding: 10px 22px;
+  padding: 12px 26px;
   box-shadow: 
     0 16px 36px rgba(0, 0, 0, 0.65),
     0 4px 14px rgba(0, 0, 0, 0.45),
@@ -867,14 +867,14 @@ strong {
   grid-template-areas: "stack";
   align-items: center;
   overflow: hidden;
-  min-height: 22px;
+  min-height: 24px;
 }
 
 .cloud-text {
   grid-area: stack;
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 500;
   letter-spacing: -0.2px;
   white-space: nowrap;
@@ -919,19 +919,19 @@ strong {
 /* Cloud Floating Animations & Absolute Positioning */
 .cloud-1 {
   top: 14%;
-  left: -40px;
+  left: -15px;
   animation: floatCloud1 7s ease-in-out infinite;
 }
 
 .cloud-2 {
   top: 28%;
-  right: -45px;
+  right: -20px;
   animation: floatCloud2 8.5s ease-in-out infinite;
 }
 
 .cloud-3 {
   bottom: 20%;
-  left: -35px;
+  left: -10px;
   animation: floatCloud3 6.8s ease-in-out infinite;
 }
 
@@ -1026,7 +1026,10 @@ strong {
 
 @media (max-width: 960px) {
   .hero-hand-stage {
-    max-width: 480px;
+    max-width: 600px;
+  }
+  .hero-hand-frame {
+    max-width: 440px;
   }
   .cloud-1 {
     top: 10%;
@@ -1049,12 +1052,12 @@ strong {
   }
 
   .hero-hand-stage {
-    max-width: 360px;
+    max-width: 380px;
     margin-bottom: 70px;
   }
 
   .hero-hand-frame {
-    max-width: 320px;
+    max-width: 340px;
     border-radius: 32px;
   }
 

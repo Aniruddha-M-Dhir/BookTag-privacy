@@ -748,164 +748,98 @@ strong {
   justify-content: center;
 }
 
-/* Open Book Scene & Perspective */
-.open-book-scene {
+/* ============================================================
+   Studio Hand Holding Phone Hero Stage (Villix & Multi Inspired)
+   ============================================================ */
+
+.hero-hand-stage {
   position: relative;
-  width: 720px;
-  max-width: 95vw;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  z-index: 2;
 }
 
-.open-book-glow {
+.hero-hand-glow {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: radial-gradient(ellipse at center, rgba(212, 119, 98, 0.16) 0%, rgba(24, 40, 33, 0.32) 45%, transparent 72%);
-  filter: blur(50px);
+  background: radial-gradient(ellipse at 50% 45%, rgba(212, 119, 98, 0.22) 0%, rgba(24, 40, 33, 0.38) 45%, transparent 72%);
+  filter: blur(60px);
   z-index: 1;
-}
-
-/* The Physical Open Book */
-.open-book-spread {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  min-height: 520px;
-  background: #141D17;
-  border-radius: 18px;
-  padding: 16px 20px;
-  box-shadow: 
-    0 35px 80px rgba(0, 0, 0, 0.85),
-    0 10px 25px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(216, 167, 101, 0.25);
-  display: flex;
-  justify-content: space-between;
-  overflow: visible;
-}
-
-/* Hardcover Outer Frame */
-.open-book-spread::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #1C2B22 0%, #0F1712 100%);
-  z-index: -1;
-  border: 1px solid rgba(216, 167, 101, 0.3);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.8);
-}
-
-/* Stacked Paper Block Edges */
-.open-book-spread::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 32px;
-  right: 32px;
-  height: 11px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #C5BCAE 0px,
-    #9C9283 1px,
-    #C5BCAE 2px
-  );
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
-  opacity: 0.85;
-}
-
-/* Left & Right Pages */
-.book-page {
-  flex: 1;
-  background: linear-gradient(180deg, #F9F6F0 0%, #F3ECE0 100%);
-  border-radius: 8px;
-  padding: 34px 28px;
-  color: #2D332F;
-  position: relative;
-  box-shadow: inset 0 0 30px rgba(180, 165, 145, 0.25);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.book-page-left {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  background: linear-gradient(90deg, #EDE5D5 0%, #FAF6EE 75%, #DFD5C1 100%);
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.book-page-right {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  background: linear-gradient(90deg, #DFD5C1 0%, #FAF6EE 25%, #EDE5D5 100%);
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-/* Center Crease / Spine Shadow */
-.book-spine-crease {
-  position: absolute;
-  top: 16px;
-  bottom: 16px;
-  left: 50%;
-  width: 44px;
-  transform: translateX(-50%);
-  background: linear-gradient(to right, transparent, rgba(50, 40, 30, 0.3) 45%, rgba(30, 20, 15, 0.45) 50%, rgba(50, 40, 30, 0.3) 55%, transparent);
   pointer-events: none;
-  z-index: 3;
 }
 
-/* Crimson Silk Bookmark Ribbon */
-.book-ribbon {
+.hero-hand-frame {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 
+    0 35px 90px rgba(0, 0, 0, 0.85),
+    0 12px 35px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #090D0B;
+}
+
+.hero-hand-stage.is-near .hero-hand-frame,
+.hero-hand-frame:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 45px 110px rgba(0, 0, 0, 0.95),
+    0 16px 45px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(212, 119, 98, 0.4),
+    0 0 35px rgba(212, 119, 98, 0.2);
+}
+
+.hero-hand-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 40px;
+}
+
+.hero-hand-img.img-primary {
+  position: relative;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-hand-img.img-secondary {
   position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: calc(100% + 40px);
-  background: linear-gradient(180deg, #B9533E 0%, #D47762 60%, #9E3E2B 100%);
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.35);
-  z-index: 4;
-  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 10px), 50% 100%, 0% calc(100% - 10px));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
-/* Faint Page Text & Watermarks */
-.book-page-header {
-  font-family: var(--font-serif);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #7D7364;
-  margin-bottom: 22px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding-bottom: 8px;
+/* Cross-fade between authentic app screenshots on hover / cursor near */
+.hero-hand-stage.is-near .hero-hand-img.img-primary,
+.hero-hand-frame:hover .hero-hand-img.img-primary {
+  opacity: 0;
+  transform: scale(1.02);
 }
 
-.book-page-body-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  opacity: 0.85;
-}
-
-.book-page-line {
-  height: 2px;
-  background: rgba(100, 90, 80, 0.12);
-  border-radius: 2px;
-}
-
-.book-page-quote {
-  font-family: var(--font-serif);
-  font-size: 14.5px;
-  font-style: italic;
-  color: #4A443B;
-  line-height: 1.6;
-  margin-top: 16px;
+.hero-hand-stage.is-near .hero-hand-img.img-secondary,
+.hero-hand-frame:hover .hero-hand-img.img-secondary {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Floating Cloud Badges (Frosted Glass Editorial Sanctuary) */
@@ -979,20 +913,20 @@ strong {
 }
 
 /* Dynamic State Swap on Cursor Near / Hover */
-.open-book-scene.is-near .cloud-text-default,
-.open-book-scene:hover .cloud-text-default {
+.hero-hand-stage.is-near .cloud-text-default,
+.hero-hand-stage:hover .cloud-text-default {
   transform: translateY(-100%);
   opacity: 0;
 }
 
-.open-book-scene.is-near .cloud-text-near,
-.open-book-scene:hover .cloud-text-near {
+.hero-hand-stage.is-near .cloud-text-near,
+.hero-hand-stage:hover .cloud-text-near {
   transform: translateY(0);
   opacity: 1;
 }
 
-.open-book-scene.is-near .floating-cloud,
-.open-book-scene:hover .floating-cloud {
+.hero-hand-stage.is-near .floating-cloud,
+.hero-hand-stage:hover .floating-cloud {
   border-color: rgba(212, 119, 98, 0.5);
   background: rgba(24, 34, 28, 0.94);
   box-shadow: 
@@ -1002,19 +936,19 @@ strong {
 
 /* Cloud Floating Animations & Absolute Positioning */
 .cloud-1 {
-  top: 30px;
-  left: -75px;
+  top: 14%;
+  left: -70px;
   animation: floatCloud1 7s ease-in-out infinite;
 }
 
 .cloud-2 {
-  top: 95px;
+  top: 28%;
   right: -80px;
   animation: floatCloud2 8.5s ease-in-out infinite;
 }
 
 .cloud-3 {
-  bottom: 35px;
+  bottom: 22%;
   left: -65px;
   animation: floatCloud3 6.8s ease-in-out infinite;
 }
@@ -1046,85 +980,10 @@ strong {
   }
 }
 
-/* Phone Nestled On Top of Open Book */
-.open-book-phone-holder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  width: 255px;
-}
-
-.open-book-phone {
-  position: relative;
-  width: 100%;
-  background: #000000;
-  border: 9px solid #1C212A;
-  border-radius: 42px;
-  box-shadow: 
-    0 25px 60px rgba(0, 0, 0, 0.75),
-    0 10px 20px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.12);
-  overflow: hidden;
-  display: block;
-  cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.open-book-scene.is-near .open-book-phone,
-.open-book-phone:hover {
-  transform: translateY(-6px) scale(1.025);
-  box-shadow: 
-    0 35px 85px rgba(0, 0, 0, 0.9),
-    0 14px 32px rgba(0, 0, 0, 0.65),
-    0 0 0 1px rgba(212, 119, 98, 0.45);
-}
-
-.open-book-phone-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 32px;
-}
-
-.open-book-phone-img.img-default {
-  position: relative;
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.open-book-phone-img.img-near {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(0.97);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-
-/* Cross-fade screen on near / hover */
-.open-book-scene.is-near .open-book-phone-img.img-default,
-.open-book-phone:hover .open-book-phone-img.img-default {
-  opacity: 0;
-  transform: scale(1.03);
-}
-
-.open-book-scene.is-near .open-book-phone-img.img-near,
-.open-book-phone:hover .open-book-phone-img.img-near {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Subtle Interactive Indicator inside Phone */
+/* Subtle Interactive Indicator inside Hand Mockup */
 .phone-hover-indicator {
   position: absolute;
-  bottom: 14px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(15, 23, 19, 0.88);
@@ -1132,7 +991,7 @@ strong {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(216, 167, 101, 0.35);
   border-radius: 9999px;
-  padding: 4px 10px;
+  padding: 5px 12px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1144,7 +1003,7 @@ strong {
   pointer-events: none;
   z-index: 15;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 .indicator-dot {
@@ -1173,27 +1032,30 @@ strong {
   font-weight: 600;
 }
 
-.open-book-scene.is-near .indicator-text-default,
-.open-book-phone:hover .indicator-text-default {
+.hero-hand-stage.is-near .indicator-text-default,
+.hero-hand-frame:hover .indicator-text-default {
   display: none;
 }
 
-.open-book-scene.is-near .indicator-text-near,
-.open-book-phone:hover .indicator-text-near {
+.hero-hand-stage.is-near .indicator-text-near,
+.hero-hand-frame:hover .indicator-text-near {
   display: inline;
 }
 
 @media (max-width: 960px) {
+  .hero-hand-stage {
+    max-width: 480px;
+  }
   .cloud-1 {
-    top: 15px;
+    top: 10%;
     left: -20px;
   }
   .cloud-2 {
-    top: 75px;
+    top: 24%;
     right: -20px;
   }
   .cloud-3 {
-    bottom: 20px;
+    bottom: 16%;
     left: -15px;
   }
 }
@@ -1204,22 +1066,18 @@ strong {
     padding: 0 16px;
   }
 
-  .open-book-scene {
-    width: 100%;
+  .hero-hand-stage {
+    max-width: 360px;
     margin-bottom: 70px;
   }
 
-  .open-book-spread {
-    min-height: 480px;
-    padding: 12px 14px;
+  .hero-hand-frame {
+    max-width: 320px;
+    border-radius: 32px;
   }
 
-  .book-page {
-    padding: 20px 14px;
-  }
-
-  .open-book-phone-holder {
-    width: 220px;
+  .hero-hand-img {
+    border-radius: 32px;
   }
 
   .floating-cloud {

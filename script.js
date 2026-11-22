@@ -236,21 +236,21 @@ function toggleSyncDemo(checkbox) {
   }
 }
 
-// ── Hero Scene Cursor Proximity & Interactive Screenshot Swap ──
+// ── Hand Mockup Hero Stage Proximity & Interactive Screenshot Swap ──
 document.addEventListener("DOMContentLoaded", () => {
-  const openBookScene = document.getElementById("openBookScene");
-  const openBookPhone = document.getElementById("openBookPhone");
-  if (!openBookScene) return;
+  const heroStage = document.getElementById("heroHandStage");
+  const heroFrame = document.getElementById("heroHandFrame");
+  if (!heroStage) return;
 
   let isNear = false;
   let rafId = null;
 
-  // Track cursor distance relative to open book scene center
+  // Track cursor distance relative to hero stage center
   const onMouseMove = (e) => {
     if (rafId) return;
     rafId = requestAnimationFrame(() => {
       rafId = null;
-      const rect = openBookScene.getBoundingClientRect();
+      const rect = heroStage.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
@@ -258,15 +258,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const distY = e.clientY - centerY;
       const distance = Math.hypot(distX, distY);
 
-      // Proximity threshold: 340px or half bounding box width + margin
-      const threshold = Math.max(rect.width * 0.58, 320);
+      // Proximity threshold: activates when cursor enters within 360px
+      const threshold = Math.max(rect.width * 0.62, 340);
 
       if (distance < threshold && !isNear) {
         isNear = true;
-        openBookScene.classList.add("is-near");
+        heroStage.classList.add("is-near");
       } else if (distance >= threshold && isNear) {
         isNear = false;
-        openBookScene.classList.remove("is-near");
+        heroStage.classList.remove("is-near");
       }
     });
   };
@@ -274,24 +274,24 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("mousemove", onMouseMove, { passive: true });
 
   // Direct hover events
-  openBookScene.addEventListener("mouseenter", () => {
+  heroStage.addEventListener("mouseenter", () => {
     isNear = true;
-    openBookScene.classList.add("is-near");
+    heroStage.classList.add("is-near");
   });
 
   // Tap or click on phone or clouds to toggle state (especially on touch devices)
-  if (openBookPhone) {
-    openBookPhone.addEventListener("click", () => {
-      isNear = !openBookScene.classList.contains("is-near");
-      openBookScene.classList.toggle("is-near", isNear);
+  if (heroFrame) {
+    heroFrame.addEventListener("click", () => {
+      isNear = !heroStage.classList.contains("is-near");
+      heroStage.classList.toggle("is-near", isNear);
     });
   }
 
   // Click on any floating cloud to toggle
   document.querySelectorAll(".floating-cloud").forEach((cloud) => {
     cloud.addEventListener("click", () => {
-      isNear = !openBookScene.classList.contains("is-near");
-      openBookScene.classList.toggle("is-near", isNear);
+      isNear = !heroStage.classList.contains("is-near");
+      heroStage.classList.toggle("is-near", isNear);
     });
   });
 });

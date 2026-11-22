@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="booktag-icon.png">
-  <link rel="stylesheet" href="style.css?v=2.3">
+  <link rel="stylesheet" href="style.css?v=2.4">
 </head>
 <body>
 
@@ -91,16 +91,16 @@
         </a>
       </div>
 
-      <!-- Physical Open Book with App Screenshot -->
-      <div class="open-book-scene" id="openBookScene">
-        <div class="open-book-glow"></div>
+      <!-- Studio Hand Holding Phone Mockup Stage -->
+      <div class="hero-hand-stage" id="heroHandStage">
+        <div class="hero-hand-glow"></div>
 
         <!-- Floating Cloud Badges (Dynamic on Hover / Cursor Proximity) -->
         <div class="floating-cloud cloud-1" aria-label="Reading sanctuary feature">
           <span class="cloud-icon">🌸</span>
           <div class="cloud-text-wrapper">
             <span class="cloud-text cloud-text-default">your personal reading sanctuary</span>
-            <span class="cloud-text cloud-text-near">keep track of all the pages your have read</span>
+            <span class="cloud-text cloud-text-near">keep track of all the pages you have read</span>
           </div>
         </div>
 
@@ -120,69 +120,24 @@
           </div>
         </div>
 
-        <div class="open-book-spread">
-          <!-- Left Open Page -->
-          <div class="book-page book-page-left">
-            <div class="book-page-header">BookTag • Volume I</div>
-            <div class="book-page-body-lines">
-              <div class="book-page-line" style="width: 85%;"></div>
-              <div class="book-page-line" style="width: 95%;"></div>
-              <div class="book-page-line" style="width: 70%;"></div>
-              <div class="book-page-line" style="width: 90%;"></div>
-              <div class="book-page-line" style="width: 80%;"></div>
-            </div>
-            <p class="book-page-quote">
-              "A small step every day leads to big results."
-            </p>
-            <div style="margin-top: auto; font-size: 11px; color: #8D8374; font-family: var(--font-serif); font-style: italic;">
-              — James Clear
-            </div>
-          </div>
-
-          <!-- Center Crease Shadow & Silk Ribbon -->
-          <div class="book-spine-crease"></div>
-          <div class="book-ribbon"></div>
-
-          <!-- Right Open Page -->
-          <div class="book-page book-page-right">
-            <div class="book-page-header">Sanctuary • Reflections</div>
-            <div class="book-page-body-lines">
-              <div class="book-page-line" style="width: 90%;"></div>
-              <div class="book-page-line" style="width: 75%;"></div>
-              <div class="book-page-line" style="width: 88%;"></div>
-              <div class="book-page-line" style="width: 82%;"></div>
-              <div class="book-page-line" style="width: 65%;"></div>
-            </div>
-            <p class="book-page-quote" style="margin-top: 20px; font-size: 13.5px; color: #645D51;">
-              Chapter-by-chapter milestones, curated notes, and dynamic Sakura blossom tracking.
-            </p>
-            <div style="margin-top: auto; font-size: 11px; color: #8D8374; text-align: right; font-family: var(--font-serif);">
-              100% Offline SQLite
-            </div>
-          </div>
-
-          <!-- Phone Nestled Right On Top of Open Book Pages -->
-          <div class="open-book-phone-holder">
-            <div class="open-book-phone" id="openBookPhone">
-              <!-- Initial Screen: Misty Mountain & Quote -->
-              <img 
-                src="app-screenshot.jpg" 
-                alt="BookTag quote screen: A small step every day leads to big results by James Clear" 
-                class="open-book-phone-img img-default"
-              >
-              <!-- Near / Hover Screen: Home Reading Stats & Sakura Tree -->
-              <img 
-                src="home-screenshot.jpg" 
-                alt="BookTag reading sanctuary home screen: Rich Dad Poor Dad progress with Sakura blossom at 92%" 
-                class="open-book-phone-img img-near"
-              >
-              <!-- Interactive Status Badge -->
-              <div class="phone-hover-indicator" aria-hidden="true">
-                <span class="indicator-dot"></span>
-                <span class="indicator-text-default">Tap / Move near</span>
-                <span class="indicator-text-near">Active Sanctuary</span>
-              </div>
-            </div>
+        <!-- Hand Holding Phone Frame -->
+        <div class="hero-hand-frame" id="heroHandFrame">
+          <!-- Primary Default Screen: Authentic App Home Screen with Cherry Blossom Tree & Reading Stats -->
+          <img 
+            src="hero-hand-home.jpg" 
+            alt="Hand holding iPhone displaying BookTag home screen with Rich Dad Poor Dad, 92% Sakura tree progress, and stats" 
+            class="hero-hand-img img-primary"
+          >
+          <!-- Secondary Transition Screen: Mindful Quote Screen -->
+          <img 
+            src="hero-hand-quote.jpg" 
+            alt="Hand holding iPhone displaying BookTag quote screen: A small step every day leads to big results" 
+            class="hero-hand-img img-secondary"
+          >
+          <div class="phone-hover-indicator" aria-hidden="true">
+            <span class="indicator-dot"></span>
+            <span class="indicator-text-default">Tap / Hover to explore</span>
+            <span class="indicator-text-near">Active Sanctuary</span>
           </div>
         </div>
       </div>
@@ -192,80 +147,7 @@
   <main class="landing-wrapper" style="position: relative; z-index: 2;">
 
     <!-- ============================================================
-         3. SOCIAL PROOF & METRICS
-         ============================================================ -->
-    <section class="landing-section" id="social-proof">
-      <div class="section-header-center">
-        <span class="section-pill">Reader Appreciation</span>
-        <h2 class="section-title">Built for Those Who Value Depth Over Speed</h2>
-        <p class="section-subtitle">Join readers who have exchanged vanity metrics for quiet, lasting retention.</p>
-      </div>
-
-      <!-- Numbers Grid -->
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-num">50+</div>
-          <div class="metric-label">Active Readers Worldwide</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">100%</div>
-          <div class="metric-label">Offline-First Local SQLite</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">0</div>
-          <div class="metric-label">Ads, Badges, or Trackers</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">5.0 ★</div>
-          <div class="metric-label">Average App Store Rating</div>
-        </div>
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "BookTag cured my reading anxiety. Instead of stressing over an arbitrary reading streak, I finally have a calm sanctuary where my thoughts and notes actually stay organized."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">EV</div>
-            <div>
-              <div class="author-name">Elena V.</div>
-              <div class="author-role">Product Designer &amp; Reader</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "The chapter-by-chapter reflection model is a masterclass in retention. I remember twice as much of what I read now, and the search finds any quote in seconds."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MK</div>
-            <div>
-              <div class="author-name">Marcus K.</div>
-              <div class="author-role">Non-Fiction Reader &amp; Essayist</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "Offline mode actually works. I flew across the Atlantic with airplane mode on, read three chapters, took notes, and everything synced seamlessly when I landed."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">DP</div>
-            <div>
-              <div class="author-name">David P.</div>
-              <div class="author-role">Software Engineering Lead</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         4. KEY BENEFITS (Problem → Outcome)
+         3. KEY BENEFITS (Problem → Outcome)
          ============================================================ -->
     <section class="landing-section" id="benefits">
       <div class="section-header-center">
@@ -679,6 +561,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.3"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>

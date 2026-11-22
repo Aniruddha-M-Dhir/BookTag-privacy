@@ -526,9 +526,10 @@ strong {
 }
 
 .btn-app-store svg {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 24px;
   fill: #FFFFFF;
+  flex-shrink: 0;
 }
 
 .btn-app-store-text {
@@ -652,7 +653,7 @@ strong {
   gap: 6px;
 }
 
-/* Phone Mockup */
+/* Phone Mockup with Real Screenshot */
 .mockup-wrapper {
   display: flex;
   justify-content: center;
@@ -672,124 +673,27 @@ strong {
 .mockup-phone {
   position: relative;
   z-index: 2;
-  width: 310px;
-  height: 620px;
-  background: #0A0D11;
-  border: 11px solid #1E232B;
+  width: 295px;
+  background: #000000;
+  border: 10px solid #1C212A;
   border-radius: 46px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mockup-notch {
-  width: 90px;
-  height: 20px;
-  background: #1E232B;
-  margin: 0 auto;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+.mockup-phone:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(212, 119, 98, 0.3);
 }
 
-.mockup-screen {
-  flex: 1;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  background: #0E1116;
-  gap: 14px;
-  overflow: hidden;
-}
-
-.mockup-top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mockup-header-title {
-  font-family: var(--font-serif);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.mockup-book-card {
-  background: linear-gradient(145deg, #182821 0%, #101B16 100%);
-  border: 1px solid #32463B;
-  border-radius: 20px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-.mockup-tree-svg {
+.mockup-screenshot-img {
   width: 100%;
-  height: 140px;
-  margin-bottom: 8px;
-}
-
-.mockup-book-title {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 600;
-  color: #F1E7D9;
-  line-height: 1.25;
-}
-
-.mockup-book-author {
-  font-size: 12px;
-  color: var(--text-sage);
-  margin-bottom: 12px;
-}
-
-.mockup-progress-bar-bg {
-  width: 100%;
-  height: 6px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-
-.mockup-progress-bar-fill {
-  width: 68%;
-  height: 100%;
-  background: linear-gradient(90deg, #D47762, #D8A765);
-  border-radius: 4px;
-}
-
-.mockup-progress-stats {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: #C5C8CD;
-}
-
-.mockup-note-card {
-  background: #161D26;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 12px;
-}
-
-.mockup-note-tag {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  color: var(--accent-terracotta);
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.mockup-note-content {
-  font-size: 11.5px;
-  line-height: 1.45;
-  color: #F1E7D9;
-  font-style: italic;
+  height: auto;
+  display: block;
+  border-radius: 36px;
 }
 
 /* Sections General */
